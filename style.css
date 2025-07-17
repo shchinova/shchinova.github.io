@@ -1,8 +1,9 @@
 @font-face {
   font-family: 'PaluiSP';
-  src: url('PaluiSPDemo-Bold.otf') format('otf');
+  src: url('PaluiSPDemo-Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 h1, h2, h3 {
@@ -51,7 +52,7 @@ h1, h2 {
   margin-bottom: 10px;
 }
 
-.a {
+a {
   color: #ffd2e3;
   text-decoration: none;
 }
