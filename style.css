@@ -40,14 +40,12 @@ h1, h2 {
 }
 
 .projects a {
+  color: #ffd2e3;
   text-decoration: none;
-  color: #ffffff;
-  transition: color 0.3s ease;
 }
 
-.projects a:hover {
+a:hover {
   text-decoration: underline;
-  color: #ff3b3f; /* красный элемент */
 }
 
 /* === Подвал === */
