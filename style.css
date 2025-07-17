@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'PaluiSP';
+  src: url('PaluiSPDemo-Bold.otf') format('otf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+h1, h2, h3 {
+  font-family: 'PaluiSP', sans-serif;
+  font-weight: 700;
+}
+
 /* === Глобальные стили === */
 body {
   font-family: 'Orbitron', sans-serif;
@@ -39,7 +51,7 @@ h1, h2 {
   margin-bottom: 10px;
 }
 
-.projects a {
+.a {
   color: #ffd2e3;
   text-decoration: none;
 }
