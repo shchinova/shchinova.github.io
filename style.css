@@ -6,15 +6,17 @@
   font-display: swap;
 }
 
-h1 {
+h1, h2 {
   font-family: 'PaluiSP', sans-serif;
   font-weight: 700;
 }
 
-h2, h3 {
+h3 {
   font-family: 'dehinted-RazerF5-Bold', sans-serif;
   font-weight: 700;
 }
+
+
 
 /* === Глобальные стили === */
 body {
