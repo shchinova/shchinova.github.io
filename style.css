@@ -97,16 +97,21 @@ footer {
   flex-direction: column;
 }
 
+.skill-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
 .skill-tag {
-  display: inline-block;
   background-color: #ffd2e3;
   color: #1e1e1e;
-  font-size: 0.8em;
   font-weight: 600;
-  padding: 4px 8px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  align-self: flex-start;
+  font-size: 0.85em;
+  padding: 4px 10px;
+  border-radius: 12px;
+  display: inline-block;
 }
 
 .card:hover {
