@@ -72,15 +72,21 @@
   </section>
 
   <script>
-    const cards = document.querySelectorAll('.card');
+  const cards = document.querySelectorAll('.card');
 
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Если кликнули по уже развернутой карточке — свернуть её
+      if (card.classList.contains('expanded')) {
+        card.classList.remove('expanded');
+      } else {
+        // Иначе свернуть все и развернуть только текущую
         cards.forEach(c => c.classList.remove('expanded'));
         card.classList.add('expanded');
-      });
+      }
     });
-  </script>
+  });
+</script>
 
     <section class="contacts">
       <h2>Контакты</h2>
