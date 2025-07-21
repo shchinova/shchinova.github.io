@@ -173,6 +173,12 @@ section {
   gap: 20px;
 }
 
+.card-wrapper {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
 .project-number {
   font-size: 1.5em;
   font-weight: bold;
