@@ -6,19 +6,44 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Bowler';
+  src: url('Bowler.ttf') format('opentype'); /* или .ttf/.woff2 — в зависимости от файла */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DehintedRazerF5';
+  src: url('dehinted-RazerF5-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DehintedRazerF5';
+  src: url('dehinted-RazerF5-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 h1, h2 {
   font-family: 'PaluiSP', sans-serif;
   font-weight: 700;
 }
 
 h3 {
-  font-family: 'dehinted-RazerF5-Bold', sans-serif;
+  font-family: 'DehintedRazerF5', sans-serif;
   font-weight: 700;
 }
 
 /* === Глобальные стили === */
 body {
-  font-family: 'dehinted-RazerF5-Regular', sans-serif;
+  font-family: 'DehintedRazerF5', sans-serif;
+  font-weight: 400;
   margin: 0;
   background-color: #1e1e1e;
   color: #ffffff;
@@ -86,7 +111,7 @@ footer {
 
 /* Номер проекта */
 .card-number {
-  font-family: 'PaluiSP', sans-serif;
+  font-family: 'Bowler', sans-serif;
   font-weight: 700;
   font-size: 1.8em;
   color: #ffffff;
