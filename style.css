@@ -25,7 +25,7 @@ body {
 }
 
 .container {
-  width: 75vw; /* Контент занимает 75% ширины окна */
+  width: 75vw;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
@@ -52,11 +52,7 @@ h1, h2 {
   margin-top: 0;
 }
 
-/* === Список проектов === */
-.projects li {
-  margin-bottom: 10px;
-}
-
+/* === Ссылки === */
 a {
   color: #ffd2e3;
   text-decoration: none;
@@ -76,7 +72,7 @@ footer {
   margin-top: 60px;
 }
 
-/* === Аккордеон / карточки проектов === */
+/* === Аккордеон / проекты === */
 .accordion {
   display: flex;
   flex-direction: column;
@@ -84,6 +80,32 @@ footer {
   margin-top: 40px;
 }
 
+.card-wrapper {
+  display: flex;
+  align-items: stretch; /* чтобы номер тянулся на всю высоту карточки */
+  gap: 20px;
+}
+
+/* Номер проекта */
+.card-number {
+  font-family: 'PaluiSP', sans-serif;
+  font-weight: 700;
+  font-size: 1.8em;
+  color: #ffffff;
+  min-width: 50px;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 4px;
+}
+
+/* Обёртка карточки */
+.card-body {
+  flex: 1;
+}
+
+/* Карточка проекта */
 .card {
   width: 100%;
   background-color: #ffffff;
@@ -97,6 +119,35 @@ footer {
   flex-direction: column;
 }
 
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card.expanded {
+  background-color: #f0f0f0;
+}
+
+/* Заголовок карточки */
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Скрытый блок */
+.card-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+.card.expanded .card-content {
+  opacity: 1;
+  max-height: 300px;
+  margin-top: 10px;
+}
+
+/* Теги */
 .skill-tags {
   display: flex;
   gap: 8px;
@@ -114,41 +165,7 @@ footer {
   display: inline-block;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card.expanded {
-  flex: 1 1 100%;
-  background-color: #f0f0f0;
-}
-
-.card-title {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.card-content {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.4s ease, max-height 0.4s ease;
-}
-
-.card.expanded .card-content {
-  opacity: 1;
-  max-height: 300px;
-  margin-top: 10px;
-}
-
-.contacts {
-  margin-top: 80px;
-}
-
-section {
-  margin-bottom: 40px;
-}
-
+/* Кнопка Подробнее */
 .button-details {
   display: inline-block;
   padding: 8px 16px;
@@ -169,23 +186,16 @@ section {
 
 .project-item {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.card-wrapper {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
+/* Отступы и секции */
+section {
+  margin-bottom: 40px;
 }
 
-.project-number {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #ffffff;
-  min-width: 40px;
-  text-align: right;
-  margin-top: 20px;
-  font-family: 'PaluiSP', sans-serif;
-  font-weight: 700;
+.contacts {
+  margin-top: 80px;
 }
+
