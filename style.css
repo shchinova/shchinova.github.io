@@ -25,9 +25,9 @@ body {
 }
 
 .container {
-  width: 90%;
-  max-width: 800px;
-  margin: auto;
+  width: 75vw; /* Контент занимает 75% ширины окна */
+  margin-left: auto;
+  margin-right: auto;
   padding: 20px;
 }
 
@@ -86,7 +86,7 @@ footer {
 
 .card {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #b7c6d7;
   color: #1e1e1e;
   border-radius: 16px;
   cursor: pointer;
