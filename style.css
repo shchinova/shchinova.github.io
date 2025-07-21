@@ -169,7 +169,7 @@ section {
 
 .project-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
 }
 
@@ -186,4 +186,6 @@ section {
   min-width: 40px;
   text-align: right;
   margin-top: 20px;
+  font-family: 'PaluiSP', sans-serif;
+  font-weight: 700;
 }
