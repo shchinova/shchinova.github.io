@@ -33,8 +33,6 @@ body {
 
 /* === Шапка сайта === */
 header {
-  background-color: #ffffff;
-  color: #1e1e1e;
   padding: 60px 0;
   text-align: center;
 }
@@ -197,5 +195,25 @@ section {
 
 .contacts {
   margin-top: 80px;
+}
+
+.top-block {
+  background-color: #f0f0f0;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  padding-top: 40px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #1e1e1e; /* тёмный текст на светлом фоне */
+}
+
+.bottom-block {
+  background-color: #f0f0f0;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  padding: 40px 0;
+  width: 100%;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  color: #1e1e1e; /* тёмный текст на светлом фоне */
 }
 
