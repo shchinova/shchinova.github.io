@@ -1,36 +1,16 @@
+/* styles.css */
 body {
   overflow: hidden;
-  font-family: sans-serif;
-  height: 100vh;
 }
-
 .slides-container {
-  height: 300vh; /* 3 слайда по 100vh */
-  transition: transform 0.8s ease-in-out;
+  height: 300vh;           /* 3 слайда по 100vh */
+  transition: transform .8s ease-in-out;
 }
-
 .slide {
   height: 100vh;
   width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 2em;
+  display: flex; align-items: center; justify-content: center;
 }
-
-/* Фоны для слайдов */
-#slide1 {
-  background-color: #171717;
-  color: #ffffff;
-}
-
-#slide2 {
-  background-color: #cfd5db;
-  color: #000000;
-}
-
-#slide3 {
-  background-color: #171717;
-  color: #ffffff;
-}
+#slide1 { background: #171717; color: #fff; }
+#slide2 { background: #cfd5db; color: #000; }
+#slide3 { background: #171717; color: #fff; }
