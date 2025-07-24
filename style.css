@@ -27,30 +27,28 @@ body {
 }
 
 #slide2 {
-  position: relative;
-  overflow-y: auto;
-  height: auto;
-  min-height: 100vh;
+  position: fixed; /* было: relative */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll; /* было: auto */
+  z-index: 2;
 }
 
 .cards-section {
   width: 100%;
-  position: relative;
-  padding-top: 10vh;
+  padding: 10vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vh;
 }
 
 .card {
-  width: 60vw;
-  max-width: 600px;
-  height: 80vh;
-  margin: 0 auto 20vh auto;
-  background-color: #e0e6ed;
-  border-radius: 16px;
-  padding: 20px;
-  color: #1e1e1e;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  position: sticky;
-  top: 10vh;
+  /* Удаляем sticky */
+  position: relative;
+  top: auto;
 }
 
 #card1 { z-index: 5; }
@@ -63,3 +61,7 @@ body {
   margin-bottom: 10px;
   font-size: 1.5em;
 }
+
+#slide1 { background: #171717; z-index: 3; }
+#slide2 { background: #cfd5db; color: #000; z-index: 2; }
+#slide3 { background: #171717; z-index: 1; }
