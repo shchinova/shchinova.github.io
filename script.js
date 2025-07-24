@@ -22,7 +22,7 @@ function showNext() {
   isAnimating = true;
   current++;
   updateSlides();
-  setTimeout(() => isAnimating = false, 800);
+  setTimeout(() => { isAnimating = false; }, 800);
 }
 
 function showPrev() {
@@ -30,20 +30,19 @@ function showPrev() {
   isAnimating = true;
   current--;
   updateSlides();
-  setTimeout(() => isAnimating = false, 800);
+  setTimeout(() => { isAnimating = false; }, 800);
 }
 
+// Глушим нативную прокрутку и используем только JS
 window.addEventListener('wheel', e => {
+  e.preventDefault();
   if (isAnimating) return;
   if (e.deltaY > 0) showNext();
   else if (e.deltaY < 0) showPrev();
-});
+}, { passive: false });
 
+// Сбрасываем скролл и выставляем первый слайд при загрузке
 window.addEventListener('DOMContentLoaded', () => {
-  updateSlides();       // на всякий случай обновить вид
-  window.scrollTo(0, 0); // сбросить нативный скролл
+  updateSlides();
+  window.scrollTo(0, 0);
 });
-
-
-// Инициализация
-updateSlides();
