@@ -1,35 +1,26 @@
 const slides = document.querySelectorAll('.slide');
 let currentSlide = 0;
-let isAnimating = false;
+let isScrolling = false;
 
-function showNextSlide() {
-  if (isAnimating || currentSlide >= slides.length - 1) return;
-  isAnimating = true;
-
-  slides[currentSlide].style.transform = 'translateY(-100%)';
-  currentSlide++;
-  
-  setTimeout(() => {
-    isAnimating = false;
-  }, 1000);
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.style.transform = `translateY(-${index * 100}vh)`;
+  });
 }
 
-function showPrevSlide() {
-  if (isAnimating || currentSlide <= 0) return;
-  isAnimating = true;
-
-  currentSlide--;
-  slides[currentSlide].style.transform = 'translateY(0)';
-  
-  setTimeout(() => {
-    isAnimating = false;
-  }, 1000);
-}
+// Начальное отображение
+showSlide(currentSlide);
 
 window.addEventListener('wheel', (e) => {
-  if (e.deltaY > 0) {
-    showNextSlide();
-  } else {
-    showPrevSlide();
+  if (isScrolling) return;
+  isScrolling = true;
+
+  if (e.deltaY > 0 && currentSlide < slides.length - 1) {
+    currentSlide++;
+  } else if (e.deltaY < 0 && currentSlide > 0) {
+    currentSlide--;
   }
+
+  showSlide(currentSlide);
+  setTimeout(() => isScrolling = false, 1000);
 });
