@@ -1,6 +1,7 @@
 const slides = Array.from(document.querySelectorAll('.slide'));
 let current = 0;
 let isAnimating = false;
+let isReady = false;
 
 function updateSlides() {
   slides.forEach((slide, i) => {
@@ -33,16 +34,20 @@ function showPrev() {
   setTimeout(() => { isAnimating = false; }, 800);
 }
 
-// Глушим нативную прокрутку и используем только JS
 window.addEventListener('wheel', e => {
   e.preventDefault();
-  if (isAnimating) return;
-  if (e.deltaY > 0) showNext();
+  if (!isReady || isAnimating) return;   // ← игнорим, пока не готов
+  if (e.deltaY > 0)      showNext();
   else if (e.deltaY < 0) showPrev();
 }, { passive: false });
 
-// Сбрасываем скролл и выставляем первый слайд при загрузке
 window.addEventListener('DOMContentLoaded', () => {
   updateSlides();
+  window.scrollTo(0, 0);
+  // Разрешаем обработку скролла через 300ms
+  setTimeout(() => { isReady = true; }, 300);
+});
+
+window.addEventListener('load', () => {
   window.scrollTo(0, 0);
 });
