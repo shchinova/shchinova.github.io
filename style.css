@@ -1,9 +1,9 @@
 html, body {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
   height: 100%;
-  overflow: hidden; /* можно оставить, т.к. мы имитируем слайды, а не обычную прокрутку */
+  overflow: auto;
+  scroll-behavior: smooth;
 }
 
 .slide {
