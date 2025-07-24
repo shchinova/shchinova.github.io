@@ -1,20 +1,20 @@
-// script.js
 const slides = Array.from(document.querySelectorAll('.slide'));
 let current = 0;
 let isAnimating = false;
+let lastScrollTime = 0;
+const scrollCooldown = 800;
 
 function showNext() {
-  if (current >= slides.length - 1) return;
+  if (current >= slides.length - 1 || isAnimating) return;
   isAnimating = true;
+  lastScrollTime = Date.now(); // Обновляем сразу
 
-  // Прячем текущий «занавес»
   slides[current].style.transition = 'transform 0.8s ease-in-out';
-  slides[current].style.transform   = 'translateY(-100vh)';
+  slides[current].style.transform = 'translateY(-100vh)';
 
   current++;
-  // Сразу задаём у нового слайда transform = 0 (он уже под ним)
   slides[current].style.transition = 'none';
-  slides[current].style.transform  = 'translateY(0)';
+  slides[current].style.transform = 'translateY(0)';
 
   setTimeout(() => {
     isAnimating = false;
@@ -22,16 +22,15 @@ function showNext() {
 }
 
 function showPrev() {
-  if (current <= 0) return;
+  if (current <= 0 || isAnimating) return;
   isAnimating = true;
+  lastScrollTime = Date.now(); // Обновляем сразу
 
-  // Сдвигаем обратно предыдущий слайд вниз
   slides[current - 1].style.transition = 'transform 0.8s ease-in-out';
-  slides[current - 1].style.transform   = 'translateY(0)';
+  slides[current - 1].style.transform = 'translateY(0)';
 
-  // Уезжающий (текущий) может оставаться на месте или скрываться под ним:
   slides[current].style.transition = 'none';
-  slides[current].style.transform   = 'translateY(100vh)';
+  slides[current].style.transform = 'translateY(100vh)';
 
   current--;
   setTimeout(() => {
@@ -39,21 +38,13 @@ function showPrev() {
   }, 800);
 }
 
-let lastScrollTime = 0;
-const scrollCooldown = 1000;
-
 window.addEventListener('wheel', e => {
   const now = Date.now();
-  if (isAnimating || now - lastScrollTime < scrollCooldown) return;
+  if (now - lastScrollTime < scrollCooldown) return;
 
-  if (e.deltaY > 0 && current < slides.length - 1) {
+  if (e.deltaY > 0) {
     showNext();
-    lastScrollTime = now;
-  } else if (e.deltaY < 0 && current > 0) {
+  } else if (e.deltaY < 0) {
     showPrev();
-    lastScrollTime = now;
   }
 });
-
-
-
