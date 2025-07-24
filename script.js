@@ -39,8 +39,18 @@ function showPrev() {
   }, 800);
 }
 
+let lastScrollTime = 0;
+
 window.addEventListener('wheel', e => {
-  if (isAnimating) return;
-  if (e.deltaY > 0)       showNext();
-  else if (e.deltaY < 0)  showPrev();
+  const now = Date.now();
+
+  // Игнорировать повторный скролл в течение 1000 мс
+  if (isAnimating || now - lastScrollTime < 1000) return;
+
+  if (e.deltaY > 0) showNext();
+  else if (e.deltaY < 0) showPrev();
+
+  lastScrollTime = now;
 });
+
+
