@@ -6,43 +6,46 @@
 
 html, body {
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
+  scroll-behavior: smooth;
   font-family: sans-serif;
+}
+
+.wrapper {
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow-y: scroll;
   scroll-behavior: smooth;
 }
 
 .slide {
-  width: 100vw;
+  scroll-snap-align: start;
   height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.8s ease;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  transition: background-color 0.5s ease;
   padding: 40px;
+  box-sizing: border-box;
 }
 
-.slide .content {
-  text-align: center;
-}
-
-/* Фоны слайдов и контрастный цвет текста */
+/* Цвета слайдов */
 #slide1 {
   background-color: #1e1e1e;
   color: #ffffff;
-  z-index: 3;
 }
-
 #slide2 {
   background-color: #cfd5db;
   color: #000000;
-  z-index: 2;
 }
-
 #slide3 {
   background-color: #171717;
   color: #ffffff;
-  z-index: 1;
+}
+
+/* Центрирование контента */
+.content {
+  text-align: center;
 }
