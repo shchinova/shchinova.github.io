@@ -161,12 +161,12 @@
     const y = slides[index].offsetTop;
     window.scrollTo({ top: y, behavior: 'smooth' });
 
-    history.replaceState(null, null, `/${index + 1}`);
+    // Используем якорь вместо «псевдостраницы» вида /2
+    history.replaceState(null, null, `#slide${index + 1}`);
 
-    // Блокируем следующий scroll до завершения
     setTimeout(() => {
       isScrolling = false;
-    }, 1000); // 1 сек — как продолжительность анимации
+    }, 1000);
   }
 
   window.addEventListener('wheel', (e) => {
@@ -179,10 +179,12 @@
     }
   });
 
-  // При загрузке страницы — читаем номер из URL
+  // При загрузке: читаем якорь
   window.addEventListener('DOMContentLoaded', () => {
-    const path = window.location.pathname;
-    const num = parseInt(path.replace('/', '')) - 1;
+    const hash = window.location.hash;
+    const match = hash.match(/slide(\d)/);
+    const num = match ? parseInt(match[1]) - 1 : 0;
+
     if (!isNaN(num) && num >= 0 && num < slides.length) {
       goToSlide(num);
     } else {
@@ -190,7 +192,7 @@
     }
   });
 
-  // Обновляем currentSlide при ручном скролле (если будет)
+  // Обновляем currentSlide при ручном скролле
   window.addEventListener('scroll', () => {
     slides.forEach((slide, index) => {
       if (Math.abs(slide.getBoundingClientRect().top) < window.innerHeight / 2) {
