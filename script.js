@@ -39,5 +39,11 @@ window.addEventListener('wheel', e => {
   else if (e.deltaY < 0) showPrev();
 });
 
+window.addEventListener('DOMContentLoaded', () => {
+  updateSlides();       // на всякий случай обновить вид
+  window.scrollTo(0, 0); // сбросить нативный скролл
+});
+
+
 // Инициализация
 updateSlides();
