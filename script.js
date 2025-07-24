@@ -40,17 +40,20 @@ function showPrev() {
 }
 
 let lastScrollTime = 0;
+const scrollCooldown = 1000;
 
 window.addEventListener('wheel', e => {
   const now = Date.now();
+  if (isAnimating || now - lastScrollTime < scrollCooldown) return;
 
-  // Игнорировать повторный скролл в течение 1000 мс
-  if (isAnimating || now - lastScrollTime < 1000) return;
-
-  if (e.deltaY > 0) showNext();
-  else if (e.deltaY < 0) showPrev();
-
-  lastScrollTime = now;
+  if (e.deltaY > 0 && current < slides.length - 1) {
+    showNext();
+    lastScrollTime = now;
+  } else if (e.deltaY < 0 && current > 0) {
+    showPrev();
+    lastScrollTime = now;
+  }
 });
+
 
 
