@@ -7,35 +7,36 @@
 body {
   overflow: hidden;
   font-family: sans-serif;
+  height: 100vh;
+}
+
+.slides-container {
+  height: 300vh; /* 3 слайда по 100vh */
+  transition: transform 0.8s ease-in-out;
 }
 
 .slide {
-  position: fixed;
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 2em;
-  color: white;
-  transition: transform 0.8s ease-in-out;
 }
 
 /* Фоны для слайдов */
 #slide1 {
   background-color: #171717;
-  z-index: 3;
   color: #ffffff;
 }
 
 #slide2 {
   background-color: #cfd5db;
-  z-index: 2;
   color: #000000;
 }
 
 #slide3 {
   background-color: #171717;
-  z-index: 1;
   color: #ffffff;
 }
