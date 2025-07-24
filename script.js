@@ -1,21 +1,18 @@
-const slides = document.querySelectorAll('.slide');
+const container = document.querySelector('.slides-container');
 let currentSlide = 0;
 let isScrolling = false;
 
 function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.style.transform = `translateY(-${index * 100}vh)`;
-  });
+  container.style.transform = `translateY(-${index * 100}vh)`;
 }
 
-// Начальное отображение
 showSlide(currentSlide);
 
 window.addEventListener('wheel', (e) => {
   if (isScrolling) return;
   isScrolling = true;
 
-  if (e.deltaY > 0 && currentSlide < slides.length - 1) {
+  if (e.deltaY > 0 && currentSlide < 2) {
     currentSlide++;
   } else if (e.deltaY < 0 && currentSlide > 0) {
     currentSlide--;
