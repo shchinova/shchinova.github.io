@@ -3,29 +3,159 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Сайт со слайдами</title>
+  <title>Портфолио | Щинова Елена </title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="slide" id="slide1">
     <div class="content">
-      <h1>Привет!</h1>
-      <p>Это первый слайд (например, "О себе")</p>
+      <h1>Портфолио</h1>
+      <h2>Щинова Елена</h2>
+      <h3>Аналитик данных</h3>
+      <p>Работаю с данными и стремлюсь развиваться в аналитике. Интересуюсь анализом бизнес-процессов, визуализацией и поиском практических решений на основе данных. Использую Python, SQL и Tableau, участвовала в проектах по построению дашбордов и работе с пользовательскими данными. Стараюсь объяснять выводы понятно и по делу. Открыта к новым задачам с фокусом на реальные цели бизнеса.</p>
     </div>
   </div>
 
   <div class="slide" id="slide2">
     <div class="content">
       <h1>Проекты</h1>
-      <p>Описание проектов</p>
+      <section class="accordion">
+      
+<div class="card-wrapper">
+  <div class="card-number">01</div>
+  <div class="card-body">
+  <div class="card">
+    <div class="skill-tags">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">Временные ряды</span>
+    </div>
+  <div class="project-item">
+    <div class="card-title">Анализ загрузки клиентской поддержки: выявление пиков и простоев</div>
+    <div class="card-content">
+      <p><strong>Краткое описание:</strong> Анализ обращений в службу поддержки за период в 12 месяцев. Цель — выявить пиковые нагрузки, простои и слабые места в распределении нагрузки.</p>
+      <p><strong>Использованные инструменты:</strong> Python (Pandas, Matplotlib, Seaborn), Jupyter</p>
+      <p><strong>Структура проекта:</strong></p>
+      <ul>
+        <li><code>data/</code> — обращения в поддержку</li>
+        <li><code>notebooks/</code> — анализ активности</li>
+        <li><code>report.md</code> — итоговый отчёт с визуализациями</li>
+        </ul>
+      <a href="project1.html" class="button-details">Подробнее</a>   
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+
+<div class="card-wrapper">
+  <div class="card-number">02</div>
+<div class="card-body">
+  <div class="card">
+    <div class="skill-tags">
+    <span class="skill-tag">Python</span>
+    <span class="skill-tag">NLP</span>
+</div>
+  <div class="project-item">
+  <div class="card-title">Оценка тональности клиентских отзывов с использованием методов обработки естественного языка (NLP)</div>
+  <div class="card-content">
+    <p>Инструменты: Pandas, Matplotlib/Seaborn, библиотеки для NLP и статистики</p>
+ <a href="project2.html" class="button-details">Подробнее</a> 
+      </div>
+    </div>
+  </div>
+</div>
+   </div>
+
+<div class="card-wrapper">
+  <div class="card-number">03</div>
+<div class="card-body">
+  <div class="card">
+    <div class="skill-tags">
+    <span class="skill-tag">Python</span>
+    <span class="skill-tag">A/B-тесты</span>
+  </div>
+  <div class="project-item">
+  <div class="card-title">A/B-тестирование: статистическая проверка различий между двумя вариантами посадочной страницы</div>
+  <div class="card-content">
+ <a href="project3.html" class="button-details">Подробнее</a> 
+      </div>
+    </div>
+  </div>
+</div>
+   </div>
+
+<div class="card-wrapper">
+  <div class="card-number">04</div>
+<div class="card-body">
+  <div class="card">
+    <div class="skill-tags">
+    <span class="skill-tag">SQL</span>
+    <span class="skill-tag">Tableau</span>
+    <span class="skill-tag">Power BI</span>
+</div>
+  <div class="project-item">
+  <div class="card-title">Аналитика клиентского сопровождения: от базы данных до визуализации</div>
+  <div class="card-content">
+    <p>Инструменты: SQL, Tableau, Power BI</p>
+    <p>Моделирование реляционной базы данных, аналитические SQL-запросы и дашборды для оценки эффективности процессов сопровождения клиентов.</p>
+ <a href="project4.html" class="button-details">Подробнее</a> 
+      </div>
+    </div>
+  </div>
+</div>
+   </div>
+
+<div class="card-wrapper">
+  <div class="card-number">05</div>
+<div class="card-body">
+  <div class="card">
+    <div class="skill-tags">
+    <span class="skill-tag">Excel</span>
+</div>
+  <div class="project-item">
+  <div class="card-title">Финансовое моделирование IT-проектов в Excel</div>
+  <div class="card-content">
+    <p>Инструменты: Excel, финансовые формулы, сценарный анализ</p>
+    <p>Оценка инвестиционной привлекательности проектов с расчётом NPV, IRR и анализом чувствительности при разных сценариях развития.</p>
+ <a href="project5.html" class="button-details">Подробнее</a> 
+      </div>
+    </div>
+  </div>
+</div>
+   </div>
+
+  </section>
+
+  <script>
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Если кликнули по уже развернутой карточке — свернуть её
+      if (card.classList.contains('expanded')) {
+        card.classList.remove('expanded');
+      } else {
+        // Иначе свернуть все и развернуть только текущую
+        cards.forEach(c => c.classList.remove('expanded'));
+        card.classList.add('expanded');
+      }
+    });
+  });
+</script>
     </div>
   </div>
 
   <div class="slide" id="slide3">
     <div class="content">
       <h1>Контакты</h1>
-      <p>Форма или информация для связи</p>
+      <p>Email: <a href="mailto:shchinova18@gmail.com">shchinova18@gmail.com</a></p>
+      <p>Telegram: <a href="https://t.me/shchinova">shchinova</a></p>
+
+      <footer>
+      <p>&copy; 2025 Shchinova</p>
+    </footer>
+      
     </div>
   </div>
 
