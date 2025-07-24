@@ -150,19 +150,28 @@
    <script>
   const slides = document.querySelectorAll('.slide');
   let currentSlide = 0;
+  let isScrolling = false;
 
   function goToSlide(index) {
     if (index < 0 || index >= slides.length) return;
 
     currentSlide = index;
+    isScrolling = true;
+
     const y = slides[index].offsetTop;
     window.scrollTo({ top: y, behavior: 'smooth' });
 
-    // Обновление URL
     history.replaceState(null, null, `/${index + 1}`);
+
+    // Блокируем следующий scroll до завершения
+    setTimeout(() => {
+      isScrolling = false;
+    }, 1000); // 1 сек — как продолжительность анимации
   }
 
   window.addEventListener('wheel', (e) => {
+    if (isScrolling) return;
+
     if (e.deltaY > 0) {
       goToSlide(currentSlide + 1);
     } else {
@@ -170,11 +179,24 @@
     }
   });
 
-  // Переход к слайду по URL (если /2 или /3)
+  // При загрузке страницы — читаем номер из URL
   window.addEventListener('DOMContentLoaded', () => {
     const path = window.location.pathname;
     const num = parseInt(path.replace('/', '')) - 1;
-    if (!isNaN(num)) goToSlide(num);
+    if (!isNaN(num) && num >= 0 && num < slides.length) {
+      goToSlide(num);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  });
+
+  // Обновляем currentSlide при ручном скролле (если будет)
+  window.addEventListener('scroll', () => {
+    slides.forEach((slide, index) => {
+      if (Math.abs(slide.getBoundingClientRect().top) < window.innerHeight / 2) {
+        currentSlide = index;
+      }
+    });
   });
 </script>
 
