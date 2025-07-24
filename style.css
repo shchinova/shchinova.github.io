@@ -21,7 +21,21 @@ body {
   transition: transform 0.8s ease-in-out;
 }
 
-/* Задаем разные фоны */
-#slide1 { background-color: #1e1e1e; z-index: 3; }
-#slide2 { background-color: #cfd5db; z-index: 2; color: black; }
-#slide3 { background-color: #1e1e1e; z-index: 1; }
+/* Фоны для слайдов */
+#slide1 {
+  background-color: #171717;
+  z-index: 3;
+  color: #ffffff;
+}
+
+#slide2 {
+  background-color: #cfd5db;
+  z-index: 2;
+  color: #000000;
+}
+
+#slide3 {
+  background-color: #171717;
+  z-index: 1;
+  color: #ffffff;
+}
