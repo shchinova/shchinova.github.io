@@ -1,53 +1,46 @@
+// script.js
 const slides = Array.from(document.querySelectorAll('.slide'));
 let current = 0;
 let isAnimating = false;
-let isReady = false;
-
-function updateSlides() {
-  slides.forEach((slide, i) => {
-    if (i < current) {
-      slide.style.transform = 'translateY(-100vh)';
-      slide.classList.remove('active');
-    } else if (i === current) {
-      slide.style.transform = 'translateY(0)';
-      slide.classList.add('active');
-    } else {
-      slide.style.transform = 'translateY(100vh)';
-      slide.classList.remove('active');
-    }
-  });
-}
 
 function showNext() {
-  if (current >= slides.length - 1 || isAnimating) return;
+  if (current >= slides.length - 1) return;
   isAnimating = true;
+
+  // Прячем текущий «занавес»
+  slides[current].style.transition = 'transform 0.8s ease-in-out';
+  slides[current].style.transform   = 'translateY(-100vh)';
+
   current++;
-  updateSlides();
-  setTimeout(() => { isAnimating = false; }, 800);
+  // Сразу задаём у нового слайда transform = 0 (он уже под ним)
+  slides[current].style.transition = 'none';
+  slides[current].style.transform  = 'translateY(0)';
+
+  setTimeout(() => {
+    isAnimating = false;
+  }, 800);
 }
 
 function showPrev() {
-  if (current <= 0 || isAnimating) return;
+  if (current <= 0) return;
   isAnimating = true;
+
+  // Сдвигаем обратно предыдущий слайд вниз
+  slides[current - 1].style.transition = 'transform 0.8s ease-in-out';
+  slides[current - 1].style.transform   = 'translateY(0)';
+
+  // Уезжающий (текущий) может оставаться на месте или скрываться под ним:
+  slides[current].style.transition = 'none';
+  slides[current].style.transform   = 'translateY(100vh)';
+
   current--;
-  updateSlides();
-  setTimeout(() => { isAnimating = false; }, 800);
+  setTimeout(() => {
+    isAnimating = false;
+  }, 800);
 }
 
 window.addEventListener('wheel', e => {
-  e.preventDefault();
-  if (!isReady || isAnimating) return;   // ← игнорим, пока не готов
-  if (e.deltaY > 0)      showNext();
-  else if (e.deltaY < 0) showPrev();
-}, { passive: false });
-
-window.addEventListener('DOMContentLoaded', () => {
-  updateSlides();
-  window.scrollTo(0, 0);
-  // Разрешаем обработку скролла через 300ms
-  setTimeout(() => { isReady = true; }, 300);
-});
-
-window.addEventListener('load', () => {
-  window.scrollTo(0, 0);
+  if (isAnimating) return;
+  if (e.deltaY > 0)       showNext();
+  else if (e.deltaY < 0)  showPrev();
 });
