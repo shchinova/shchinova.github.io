@@ -1,28 +1,50 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Портфолио | Щинова Елена</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Портфолио аналитика данных</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="slide" id="slide1">
-    <!-- Слайд 1 -->
-    <h1>Обо мне</h1>
-    <p>Здесь шапка и блок «О себе»</p>
-  </div>
-  <div class="slide" id="slide2">
-    <!-- Слайд 2 -->
-    <h1>Проекты</h1>
-    <p>Здесь карточки проектов</p>
-  </div>
-  <div class="slide" id="slide3">
-    <!-- Слайд 3 -->
-    <h1>Контакты</h1>
-    <p>Информация для связи</p>
-  </div>
+
+  <header>
+    <div class="container">
+      <h1>Алексей Иванов</h1>
+      <p>Аналитик данных • Python • SQL • Tableau</p>
+    </div>
+  </header>
+
+  <section class="projects">
+    <div class="container">
+      <h2>Проекты</h2>
+
+      <div class="project-card">
+        <h3>Дашборд для SaaS-компании</h3>
+        <p>Создан централизованный дашборд в Tableau для коммерческого отдела, визуализированы подписки, MRR и отток клиентов.</p>
+        <a href="#">Смотреть проект</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Анализ продаж e-commerce</h3>
+        <p>Проведена сегментация клиентов, рассчитан LTV и составлены рекомендации по удержанию.</p>
+        <a href="#">Смотреть проект</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Отчётность в Excel + SQL</h3>
+        <p>Автоматизирована выгрузка и визуализация данных по доходам и KPI для финансового отдела.</p>
+        <a href="#">Смотреть проект</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>Связаться: <a href="mailto:alexey.ivanov@email.com">alexey.ivanov@email.com</a> | Telegram: @alexey_data</p>
+    </div>
+  </footer>
 
 </body>
 </html>
