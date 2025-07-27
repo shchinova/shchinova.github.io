@@ -27,6 +27,7 @@ header {
   padding: 4rem 2rem;
   transition: all 0.3s ease;
   z-index: 1000;
+  background: white;
 }
 
 header.shrink {
