@@ -7,7 +7,9 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
-  background-color: #ffffff;
+  background: #ECE9E6; /* fallback */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6); /* для старых Safari/Chrome */
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* современный синтаксис */
   color: #1e1e1e;
 }
 
