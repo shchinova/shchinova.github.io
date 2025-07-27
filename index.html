@@ -1,60 +1,75 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Портфолио | Елена Щинова</title>
-  <link rel="stylesheet" href="style.css"/>
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta name="viewport" content="width=1024">
+	<meta name="MobileOptimized" content="width">
+	<title>Портфолио</title>
+	<link rel="stylesheet" href="./Document_files/liMarquee.css">
+	<link rel="stylesheet" href="./Document_files/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+	<link rel="stylesheet" href="./Document_files/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+	<link rel="stylesheet" href="./Document_files/style.css">
+	<script src="./Document_files/jquery-3.7.1.js.Без названия" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+	<script src="./Document_files/jquery.marquee.min.js.Без названия"></script>
+	<script src="./Document_files/jquery.liMarquee.js.Без названия"></script>
+	<script src="./Document_files/slick.min.js.Без названия" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
 
-  <header id="main-header" class="expanded">
-  <div class="container">
-    <h1>Портфолио</h1>
-  </div>
-</header>
+	
 
-    <div class="container">
-      <h2>Елена Щинова</h2>
-      <p>Аналитик данных</p>
-      <p>Работаю с данными и стремлюсь развиваться в аналитике. Интересуюсь анализом бизнес-процессов, визуализацией и поиском практических решений на основе данных. Использую Python, SQL и Tableau, участвовала в проектах по построению дашбордов и работе с пользовательскими данными. Стараюсь объяснять выводы понятно и по делу. Открыта к новым задачам с фокусом на реальные цели бизнеса.</p>
-    </div>
 
-  <section class="projects">
-    <div class="container">
-      <h2>Проекты</h2>
+  <header>
+    <div class="content flex_content flex_contenttopirca">
 
-      <div class="project-card">
-        <h3>Дашборд для SaaS-компании</h3>
-        <p>Создан централизованный дашборд в Tableau для коммерческого отдела, визуализированы подписки, MRR и отток клиентов.</p>
-        <a href="#">Смотреть проект</a>
+      <div class="logo logoactiv">
+        <h1>Портфолио</h1>
       </div>
-
-      <div class="project-card">
-        <h3>Анализ продаж e-commerce</h3>
-        <p>Проведена сегментация клиентов, рассчитан LTV и составлены рекомендации по удержанию.</p>
-        <a href="#">Смотреть проект</a>
-      </div>
-
-      <div class="project-card">
-        <h3>Отчётность в Excel + SQL</h3>
-        <p>Автоматизирована выгрузка и визуализация данных по доходам и KPI для финансового отдела.</p>
-        <a href="#">Смотреть проект</a>
+      
+      <div class="mob_menu">
+        <img src="https://sinitsa-buro.ru/">
       </div>
 
     </div>
-  </section>
+  </header>
 
-  <footer>
-    <div class="container">
-      <h2>Контакты</h2>
-      <p>Email: <a href="mailto:shchinova18@gmail.com">shchinova18@gmail.com</a></p>
-      <p>Telegram: <a href="https://t.me/shchinova">shchinova</a></p>
-      <p>&copy; 2025 Shchinova</p>
-    </div>
-  </footer>
 
-  <script src="script.js"></script>
+	<section class="ferst">
+		<div class="content">
+			<h1>Работаю с данными и стремлюсь развиваться в аналитике. Интересуюсь анализом бизнес-процессов, визуализацией и поиском практических решений на основе данных. Использую Python, SQL и Tableau, участвовала в проектах по построению дашбордов и работе с пользовательскими данными. Стараюсь объяснять выводы понятно и по делу. Открыта к новым задачам с фокусом на реальные цели бизнеса.</h1>
+			<img src="./Document_files/egz.svg">
+		</div>
+	</section>
 
-</body>
-</html>
+	
+
+
+			<div>
+				<p class="bggb">Москва, ул. Новодмитровская, д. 1с1, 4 этаж, пом. 47</p>
+
+				<div class="foot_flexinging">
+					<a class="btn" href="tel:+79169324354">+7 916 932 43 54</a>
+          <a class="btn btn_black" href="https://t.me/kirpichi_i_kudri">Оставить заявку</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<script type="text/javascript">
+		$(window).scroll(function() {
+			var height = $(window).scrollTop();
+
+			if(height < 100){
+			$('.flex_content').addClass('flex_contenttopirca');
+			$('.logo').addClass('logoactiv');
+			} else{
+			$('.flex_content').removeClass('flex_contenttopirca');
+			$('.logo').removeClass('logoactiv');
+			}
+					});
+	</script>
+
+
+
+
+
+<span style="border-radius:10px !important;text-indent:12px !important;width:auto !important;height:20px !important;padding:0px 8px !important;text-align:center !important;vertical-align:middle !important;font:bold 11px / 20px &quot;Helvetica Neue&quot;, Helvetica, sans-serif !important;color:rgb(255, 255, 255) !important;background:url(&quot;data:image/svg+xml;base64,PHN2ZyBpZD0ic291cmNlIiB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNiIgY3k9IjYiIHI9IjYiIGZpbGw9IiNFNjAwMjMiPjwvY2lyY2xlPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAgNkMwIDguNTYxNSAxLjYwNTUgMTAuNzQ4NSAzLjg2NSAxMS42MDlDMy44MSAxMS4xNDA1IDMuNzUxNSAxMC4zNjggMy44Nzc1IDkuODI2QzMuOTg2IDkuMzYgNC41NzggNi44NTcgNC41NzggNi44NTdDNC41NzggNi44NTcgNC4zOTk1IDYuNDk5NSA0LjM5OTUgNS45N0M0LjM5OTUgNS4xNCA0Ljg4MDUgNC41MiA1LjQ4IDQuNTJDNS45OSA0LjUyIDYuMjM2IDQuOTAyNSA2LjIzNiA1LjM2MUM2LjIzNiA1Ljg3MzUgNS45MDk1IDYuNjM5NSA1Ljc0MSA3LjM1QzUuNjAwNSA3Ljk0NDUgNi4wMzk1IDguNDI5NSA2LjYyNTUgOC40Mjk1QzcuNjg3IDguNDI5NSA4LjUwMzUgNy4zMSA4LjUwMzUgNS42OTRDOC41MDM1IDQuMjYzNSA3LjQ3NTUgMy4yNjQgNi4wMDggMy4yNjRDNC4zMDkgMy4yNjQgMy4zMTE1IDQuNTM4NSAzLjMxMTUgNS44NTZDMy4zMTE1IDYuMzY5NSAzLjUwOSA2LjkxOTUgMy43NTYgNy4yMTlDMy44MDQ1IDcuMjc4NSAzLjgxMiA3LjMzIDMuNzk3NSA3LjM5MDVDMy43NTIgNy41Nzk1IDMuNjUxIDcuOTg1IDMuNjMxNSA4LjA2OEMzLjYwNSA4LjE3NyAzLjU0NSA4LjIwMDUgMy40MzE1IDguMTQ3NUMyLjY4NTUgNy44MDA1IDIuMjE5NSA2LjcxIDIuMjE5NSA1LjgzNEMyLjIxOTUgMy45NDk1IDMuNTg4IDIuMjE5NSA2LjE2NTUgMi4yMTk1QzguMjM3NSAyLjIxOTUgOS44NDggMy42OTYgOS44NDggNS42NjlDOS44NDggNy43Mjc1IDguNTUwNSA5LjM4NDUgNi43NDg1IDkuMzg0NUM2LjE0MyA5LjM4NDUgNS41NzQ1IDkuMDY5NSA1LjM3OTUgOC42OThDNS4zNzk1IDguNjk4IDUuMDggOS44MzkgNS4wMDc1IDEwLjExOEM0Ljg2NjUgMTAuNjYgNC40NzU1IDExLjM0NiA0LjIzMyAxMS43MzU1QzQuNzkyIDExLjkwNzUgNS4zODUgMTIgNiAxMkM5LjMxMzUgMTIgMTIgOS4zMTM1IDEyIDZDMTIgMi42ODY1IDkuMzEzNSAwIDYgMEMyLjY4NjUgMCAwIDIuNjg2NSAwIDZaIiBmaWxsPSJ3aGl0ZSI+PC9wYXRoPgo8L3N2Zz4=&quot;) 4px 50% / 12px 12px no-repeat rgb(230, 0, 35) !important;position:absolute !important;opacity:1 !important;z-index:9007199254740990 !important;display:none !important;cursor:pointer !important;border:none !important;-webkit-font-smoothing:antialiased !important;top:0 !important;left:0 !important;display:none !important;top:1103px !important;left:202px !important">Сохранить</span></body></html>
