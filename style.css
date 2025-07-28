@@ -52,7 +52,7 @@ body {
 
 /* HEADER */
 header {
-  max-width: 900px;
+  max-width: 100%; /* было 900px */
   text-align: left;
 }
 
