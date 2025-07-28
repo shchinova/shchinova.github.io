@@ -33,18 +33,18 @@ body {
 }
 
 .slide-intro {
-  background: var(--bg-color);
+  background: #171717;
   z-index: 1;
 }
 
 .slide-projects {
-  background: white;
+  background: #f3f5f7;
   z-index: 2;
   box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
 }
 
 .slide-contact {
-  background: #f9f9f9;
+  background: #171717;
   z-index: 3;
   box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
 }
