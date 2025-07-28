@@ -35,7 +35,7 @@ body {
 .slide-intro {
   background: #171717;
   z-index: 1;
-  padding: 4rem 2rem;
+  padding: 4rem 1rem 4rem 1.5rem; /* левый отступ с 2rem до 1.5rem */
 }
 
 .slide-projects {
@@ -59,9 +59,9 @@ header {
 header h1, header h2, header h3 {
   font-family: 'Segoe UI', Tahoma, sans-serif;
   font-weight: 700;
-  font-size: 3.5rem;
+  font-size: 5rem; /* было 3.5rem */
   color: white;
-  line-height: 1.2;
+  line-height: 1.1; /* чуть плотнее */
 }
 
 header h2, header h3 {
@@ -73,7 +73,7 @@ header p {
   font-size: 1.1rem;
   color: white;
   margin-top: 2rem;
-  line-height: 1.6;
+  line-height: 1.1; /* было 1.6 — уменьшили */
   white-space: pre-line;
 }
 
