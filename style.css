@@ -35,6 +35,7 @@ body {
 .slide-intro {
   background: #171717;
   z-index: 1;
+  padding: 4rem 2rem;
 }
 
 .slide-projects {
@@ -51,24 +52,29 @@ body {
 
 /* HEADER */
 header {
-  text-align: center;
-  max-width: 800px;
+  max-width: 900px;
+  text-align: left;
 }
 
-header h1 {
-  font-size: 2.5rem;
-  color: var(--main-color);
+header h1, header h2, header h3 {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  color: white;
+  line-height: 1.2;
 }
 
-header h2 {
-  font-size: 1.5rem;
-  color: var(--highlight);
-  margin-top: 0.5rem;
+header h2, header h3 {
+  margin-top: 0.2rem;
 }
 
 header p {
-  margin-top: 1rem;
-  font-size: 1rem;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 1.1rem;
+  color: white;
+  margin-top: 2rem;
+  line-height: 1.6;
+  white-space: pre-line;
 }
 
 /* Skills */
@@ -79,17 +85,18 @@ header p {
 .skills ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   list-style: none;
+  padding-left: 0;
   gap: 0.5rem;
 }
 
 .skills li {
-  background: var(--accent-color);
+  background-color: #171717;
   color: white;
-  padding: 0.3rem 0.8rem;
+  border: 1px solid white;
+  padding: 0.4rem 1rem;
   border-radius: 12px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 /* Projects */
