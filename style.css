@@ -1,110 +1,129 @@
+:root {
+  --main-color: #2b2d42;
+  --accent-color: #8d99ae;
+  --bg-color: #edf2f4;
+  --text-color: #2b2d42;
+  --highlight: #ef233c;
+}
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
-  background: #ECE9E6; /* fallback */
-  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6); /* для старых Safari/Chrome */
-  background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* современный синтаксис */
-  color: #1e1e1e;
+  padding: 0 1rem;
 }
 
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-/* header — без фона */
 header {
-  position: relative;
-  width: 100%;
   text-align: center;
-  padding: 4rem 2rem;
-  transition: all 0.3s ease;
-  z-index: 1000;
-  background: white;
-}
-
-header.shrink {
-  position: fixed;
-  top: 0;
-  padding: 1rem 2rem;
-  background: #ffffff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 2rem 0;
+  border-bottom: 2px solid var(--accent-color);
 }
 
 header h1 {
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  transition: font-size 0.3s ease;
+  color: var(--main-color);
 }
 
-header.shrink h1 {
+header h2 {
   font-size: 1.5rem;
+  color: var(--highlight);
+  margin-top: 0.5rem;
 }
 
 header p {
-  font-size: 1.2rem;
-  color: #555;
-  transition: font-size 0.3s ease;
+  margin: 1rem auto;
+  max-width: 600px;
+  font-size: 1rem;
 }
 
-header.shrink p {
+.skills {
+  margin-top: 1rem;
+}
+
+.skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+.skills li {
+  background: var(--accent-color);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
   font-size: 0.9rem;
 }
 
-/* .projects — убираем фон */
 .projects {
-  color: #1e1e1e;
-  padding: 4rem 2rem;
+  padding: 2rem 0;
+  max-width: 1000px;
+  margin: auto;
 }
 
-.projects h2 {
+.projects h3 {
   text-align: center;
-  margin-bottom: 2rem;
   font-size: 2rem;
-}
-
-.project-card {
-  background: #ffffff;
-  color: #1e1e1e;
-  border-radius: 12px;
-  padding: 1.5rem;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  color: var(--main-color);
 }
 
-.project-card h3 {
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.project {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+}
+
+.project h4 {
   margin-bottom: 0.5rem;
+  color: var(--highlight);
 }
 
-.project-card a {
-  color: #007acc;
-  text-decoration: none;
-  font-weight: bold;
+.project p {
+  font-size: 0.95rem;
 }
 
-.project-card a:hover {
-  text-decoration: underline;
-}
-
-/* footer — убираем фон */
 footer {
-  color: #1e1e1e;
   text-align: center;
-  padding: 2rem;
+  padding: 2rem 0 1rem;
+  border-top: 2px solid var(--accent-color);
+  margin-top: 2rem;
+  font-size: 0.9rem;
 }
 
-footer a {
-  color: #ccc;
+.contacts a {
+  display: inline-block;
+  margin: 0.5rem;
+  color: var(--main-color);
   text-decoration: none;
 }
 
-footer a:hover {
-  text-decoration: underline;
+.contacts a:hover {
+  color: var(--highlight);
+}
+
+@media (max-width: 600px) {
+  header h1 { font-size: 2rem; }
+  header h2 { font-size: 1.2rem; }
 }
