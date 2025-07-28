@@ -7,23 +7,52 @@
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-color);
+  background: var(--bg-color);
   color: var(--text-color);
-  line-height: 1.6;
-  padding: 0 1rem;
+  overflow-x: hidden;
 }
 
+.slide {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+}
+
+.slide-intro {
+  background: var(--bg-color);
+  z-index: 1;
+}
+
+.slide-projects {
+  background: white;
+  z-index: 2;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+}
+
+.slide-contact {
+  background: #f9f9f9;
+  z-index: 3;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+}
+
+/* HEADER */
 header {
   text-align: center;
-  padding: 2rem 0;
-  border-bottom: 2px solid var(--accent-color);
+  max-width: 800px;
 }
 
 header h1 {
@@ -38,13 +67,13 @@ header h2 {
 }
 
 header p {
-  margin: 1rem auto;
-  max-width: 600px;
+  margin-top: 1rem;
   font-size: 1rem;
 }
 
+/* Skills */
 .skills {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .skills ul {
@@ -53,7 +82,6 @@ header p {
   justify-content: center;
   list-style: none;
   gap: 0.5rem;
-  padding: 0;
 }
 
 .skills li {
@@ -64,14 +92,13 @@ header p {
   font-size: 0.9rem;
 }
 
+/* Projects */
 .projects {
-  padding: 2rem 0;
   max-width: 1000px;
-  margin: auto;
+  text-align: center;
 }
 
 .projects h3 {
-  text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
   color: var(--main-color);
@@ -79,15 +106,15 @@ header p {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
 }
 
 .project {
-  background: white;
+  background: var(--bg-color);
   border-radius: 10px;
   padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
 }
 
@@ -104,12 +131,13 @@ header p {
   font-size: 0.95rem;
 }
 
+/* Footer / Contacts */
 footer {
   text-align: center;
-  padding: 2rem 0 1rem;
-  border-top: 2px solid var(--accent-color);
-  margin-top: 2rem;
-  font-size: 0.9rem;
+}
+
+.contacts {
+  margin-bottom: 1rem;
 }
 
 .contacts a {
@@ -117,10 +145,16 @@ footer {
   margin: 0.5rem;
   color: var(--main-color);
   text-decoration: none;
+  font-weight: 500;
 }
 
 .contacts a:hover {
   color: var(--highlight);
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #666;
 }
 
 @media (max-width: 600px) {
