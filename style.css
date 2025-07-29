@@ -26,7 +26,7 @@ body {
   display: flex;
   justify-content: flex-start; /* вместо center */
   align-items: flex-start; /* можно тоже, если нужно */
-  padding: 4rem 2rem 2rem 4rem; /* было 2 - увеличила верхний и левый */
+  padding: 4rem 4rem 4rem 4rem; /* было 2 */
   z-index: 0;
   transition: transform 0.3s ease;
   overflow-y: auto;
@@ -35,7 +35,6 @@ body {
 .slide-intro {
   background: #171717;
   z-index: 1;
-  padding-left: 3rem; /* было 1rem, увеличиваем до нужного значения */
 }
 
 .slide-projects {
