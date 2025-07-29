@@ -23,10 +23,10 @@ body {
   position: sticky;
   top: 0;
   height: 100vh;
-  padding: 2rem 2rem 2rem 1rem; /* или padding-left: 1rem; */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start; /* вместо center */
+  align-items: flex-start; /* можно тоже, если нужно */
+  padding: 2rem 2rem 2rem 1rem;
   z-index: 0;
   transition: transform 0.3s ease;
   overflow-y: auto;
