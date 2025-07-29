@@ -26,7 +26,7 @@ body {
   display: flex;
   justify-content: flex-start; /* вместо center */
   align-items: flex-start; /* можно тоже, если нужно */
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 4rem 2rem 2rem 4rem; /* было 2 - увеличила верхний и левый */
   z-index: 0;
   transition: transform 0.3s ease;
   overflow-y: auto;
