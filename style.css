@@ -67,8 +67,7 @@ header h2, header h3 {
   margin-top: 0.2rem;
 }
 
-.inline-icon {
-  height: 1em;               /* соответствует высоте шрифта */
+.inline-icon {               /* убрала высоту height: 1em; */
   width: auto;               /* сохраняет пропорции */
   vertical-align: middle;    /* выравнивание по строке */
   margin-left: 0.5rem;       /* отступ от текста */
@@ -99,7 +98,7 @@ header p {
 
 .skills li {
   background-color: #171717;
-  color: #e85f67;
+  color: #ffffff;
   border: 1px solid white;
   padding: 0.4rem 1rem;
   border-radius: 999px; /* было 12 — увеличила */
