@@ -58,7 +58,7 @@ header {
 header h1, header h2, header h3 {
   font-family: 'Segoe UI', Tahoma, sans-serif;
   font-weight: 700;
-  font-size: 7rem; /* было 5 - увеличила */
+  font-size: 5rem; /* было 5 - увеличила */
   color: white;
   line-height: 1.1; /* чуть плотнее */
 }
