@@ -71,7 +71,7 @@ header p {
   font-family: 'Consolas', 'Courier New', monospace;
   font-size: 1.1rem;
   color: white;
-  margin-top: 4rem;
+  margin-top: 8rem;
   margin-bottom: 4rem; /* было 2 - увеличила отступы */
   line-height: 0.9; /* было 1.1 — уменьшила */
   white-space: pre-line;
