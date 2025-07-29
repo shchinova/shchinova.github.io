@@ -67,6 +67,13 @@ header h2, header h3 {
   margin-top: 0.2rem;
 }
 
+.inline-icon {
+  height: 1em;               /* соответствует высоте шрифта */
+  width: auto;               /* сохраняет пропорции */
+  vertical-align: middle;    /* выравнивание по строке */
+  margin-left: 0.5rem;       /* отступ от текста */
+}
+
 header p {
   font-family: 'Consolas', 'Courier New', monospace;
   font-size: 1.1rem;
@@ -167,11 +174,4 @@ footer p {
 @media (max-width: 600px) {
   header h1 { font-size: 2rem; }
   header h2 { font-size: 1.2rem; }
-}
-
-.inline-icon {
-  width: 2.5rem;            /* или подбери вручную, чтобы красиво смотрелось */
-  height: auto;
-  vertical-align: middle;   /* выравнивание по тексту */
-  margin-left: 0.5rem;      /* отступ между текстом и иконкой */
 }
