@@ -99,7 +99,7 @@ header p {
 
 .skills li {
   background-color: #171717;
-  color: white;
+  color: #e85f67;
   border: 1px solid white;
   padding: 0.4rem 1rem;
   border-radius: 999px; /* было 12 — увеличила */
