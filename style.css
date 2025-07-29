@@ -96,7 +96,7 @@ header p {
   color: white;
   border: 1px solid white;
   padding: 0.4rem 1rem;
-  border-radius: 12px;
+  border-radius: 999px; /* было 12 — увеличила */
   font-size: 0.95rem;
 }
 
