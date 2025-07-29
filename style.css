@@ -35,8 +35,8 @@ body {
 .slide-intro {
   background: #171717;
   z-index: 1;
-  padding: 4rem 1rem 4rem 1rem; /* вместо 1.5rem */
-  border-left: 1px solid red; /* временно, чтобы видеть отступ */
+  padding-left: 3rem; /* было 1rem, увеличиваем до нужного значения */
+  border-left: 1px solid red;
 }
 
 .slide-projects {
