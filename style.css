@@ -73,7 +73,6 @@ header {
 header h1 {
   font-family: 'Impact', sans-serif;
   font-size: 96px;
-  font-weight: 700; /* можно оставить, но Impact и так жирный */
   line-height: 1.1;
   color: white;
   margin: 0.5rem 0;
