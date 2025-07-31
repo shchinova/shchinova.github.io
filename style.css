@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'Impact';
+  src: url('/fonts/impact.ttf') format('ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Calibri Light';
+  src: url('/fonts/calibri_light.ttf') format('ttf');
+  font-weight: 300;
+}
+
 :root {
   --main-color: #2b2d42;
   --accent-color: #8d99ae;
@@ -35,6 +47,9 @@ body {
 .slide-intro {
   background: #171717;
   z-index: 1;
+  /* Центрирование содержимого по горизонтали и вертикали */
+  justify-content: center;
+  align-items: center;
 }
 
 .slide-projects {
@@ -51,20 +66,26 @@ body {
 
 /* HEADER */
 header {
-  max-width: 100%; /* было 900px */
-  text-align: left;
+  max-width: 100%;
+  text-align: center; /* заменили left → center */
 }
 
-header h1, header h2, header h3 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 5rem; /* было 5 - увеличила */
+header h1 {
+  font-family: 'Impact', sans-serif;
+  font-size: 96px;
+  font-weight: 700; /* можно оставить, но Impact и так жирный */
+  line-height: 1.1;
   color: white;
-  line-height: 1.1; /* чуть плотнее */
+  margin: 0.5rem 0;
 }
 
-header h2, header h3 {
-  margin-top: 0.2rem;
+header h2 {
+  font-family: 'Calibri Light', 'Calibri', sans-serif;
+  font-size: 32px;
+  font-weight: 300; /* Light */
+  line-height: 1.2;
+  color: white;
+  margin-top: 1rem;
 }
 
 header p {
