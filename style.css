@@ -56,7 +56,7 @@ header {
 }
 
 header h1, header h2, header h3 {
-  font-family: 'Impact', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 5rem; /* было 5 - увеличила */
   color: white;
@@ -67,8 +67,14 @@ header h2, header h3 {
   margin-top: 0.2rem;
 }
 
+.inline-icon {               /* убрала высоту height: 1em; */
+  width: auto;               /* сохраняет пропорции */
+  vertical-align: middle;    /* выравнивание по строке */
+  margin-left: 0.5rem;       /* отступ от текста */
+}
+
 header p {
-  font-family: 'Calibri Light', monospace;
+  font-family: 'Consolas', 'Courier New', monospace;
   font-size: 1.1rem;
   color: white;
   margin-top: 8rem;
