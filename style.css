@@ -1,12 +1,11 @@
 @font-face {
   font-family: 'Impact';
-  src: url('/fonts/impact.ttf') format('ttf');
-  font-weight: 700;
+  src: url('/fonts/impact.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Calibri Light';
-  src: url('/fonts/calibri_light.ttf') format('ttf');
+  src: url('/fonts/calibri_light.ttf') format('truetype');
   font-weight: 300;
 }
 
