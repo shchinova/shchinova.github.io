@@ -118,7 +118,7 @@ header p {
 /* Логотип-абзац (отдельный декоративный текст) */
 .logo-paragraph {
   font-family: 'Kill';
-  font-size: 4rem;
+  font-size: 3rem; /* ❗ было 4 */
   color: #d1baff;
   text-align: center;
   margin: 2rem 0;
