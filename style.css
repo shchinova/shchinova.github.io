@@ -83,10 +83,10 @@ body {
 
 /* ЛИНИЯ */
 .logo-underline {
-  margin-top: 0.4rem;
+  margin-top: 0.6rem; /* ← чуть больше воздуха */
   height: 4px;
   background-color: #1d1918;
-  width: 100vw; /* ← на всю ширину экрана */
+  width: 100vw;
 }
 
 /* ЦЕНТРАЛЬНАЯ ЧАСТЬ */
