@@ -63,7 +63,7 @@ body {
   pointer-events: none;
 }
 
-/* Обёртка, которая содержит текст и линию */
+/* КОНТЕЙНЕР ДЛЯ ЛОГО И ЛИНИИ */
 .logo-wrapper {
   display: flex;
   flex-direction: column;
