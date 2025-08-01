@@ -132,6 +132,11 @@ header h2 {
    font-weight: normal;
 }
 
+.space-between {
+  display: inline-block;
+  width: 5cm; /* или 200px, если хочешь точнее подстроить под экран */
+}
+
 header p {
   margin-top: 2rem;
   margin-bottom: 2rem;
