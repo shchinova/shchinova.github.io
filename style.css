@@ -1,6 +1,7 @@
 /* -----------------------------------------------------
    ШРИФТЫ
 ----------------------------------------------------- */
+
 @font-face {
   font-family: 'Impact';
   src: url('/impact.ttf') format('truetype');
@@ -20,6 +21,7 @@
 /* -----------------------------------------------------
    ПЕРЕМЕННЫЕ И БАЗОВЫЕ НАСТРОЙКИ
 ----------------------------------------------------- */
+
 :root {
   --main-color: #2b2d42;
   --accent-color: #8d99ae;
@@ -59,59 +61,32 @@ body {
 ----------------------------------------------------- */
 
 .slide-intro {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0;
-  height: 100vh;
   background: #171717;
-  color: white;
-  position: relative;
-}
-
-/* ВЕРХ */
-.intro-top {
-  padding: 1rem 2rem 0 2rem;
-  text-align: center;
+  z-index: 1;
 }
 
 .logo-paragraph {
   font-family: 'Kill';
-  font-size: 3rem; /* ❗ было 4 */
+  font-size: 3rem;
   color: #d1baff;
   text-align: center;
   margin: 2rem 0;
   line-height: 1.2;
 }
 
-.bottom-line {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 20px;
-  width: 100%;
-  background-color: #1e1918;
+header {
+  max-width: 100%;
+  text-align: left;
 }
 
-/* ЦЕНТР */
-.intro-middle {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 2rem;
-}
-
-.intro-header h1 {
+header h1 {
   font-family: 'Impact', sans-serif;
   font-size: 96px;
   color: white;
   margin: 0;
 }
 
-.intro-header h2 {
+header h2 {
   font-family: 'Calibri Light', 'Calibri', sans-serif;
   font-size: 32px;
   font-weight: 300;
@@ -119,26 +94,18 @@ body {
   margin-top: 1rem;
 }
 
-/* НИЗ */
-.intro-bottom {
-  padding: 1rem 2rem 2.5rem;
-  position: relative;
-}
-
-.intro-description {
-  text-align: center;
+header p {
+  font-family: 'Consolas', 'Courier New', monospace;
   font-size: 1.1rem;
   color: white;
-  margin-bottom: 1.5rem;
-  line-height: 1.5;
+  margin-top: 8rem;
+  margin-bottom: 4rem;
+  line-height: 0.9;
+  white-space: pre-line;
 }
 
 .skills {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
 }
 
 .skills ul {
@@ -147,12 +114,11 @@ body {
   list-style: none;
   padding-left: 0;
   gap: 0.5rem;
-  justify-content: center;
 }
 
 .skills li {
   background-color: #171717;
-  color: white;
+  color: #ffffff;
   border: 1px solid white;
   padding: 0.4rem 1rem;
   border-radius: 999px;
@@ -247,28 +213,6 @@ footer p {
 ----------------------------------------------------- */
 
 @media (max-width: 600px) {
-  .intro-header h1 {
-    font-size: 2.5rem;
-  }
-
-  .intro-header h2 {
-    font-size: 1.2rem;
-  }
-
-  .intro-description {
-    font-size: 1rem;
-  }
-
-  .logo-paragraph {
-    font-size: 2rem;
-  }
-
-  .skills li {
-    font-size: 0.8rem;
-    padding: 0.3rem 0.8rem;
-  }
-
-  .intro-bottom {
-    padding-bottom: 2.5rem; /* оставить пространство над полосой */
-  }
+  header h1 { font-size: 2rem; }
+  header h2 { font-size: 1.2rem; }
 }
