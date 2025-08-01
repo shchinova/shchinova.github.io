@@ -59,10 +59,20 @@ body {
 ----------------------------------------------------- */
 
 .slide-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  height: 100vh;
   background: #171717;
-  z-index: 1;
-  justify-content: center;
-  align-items: center;
+  color: white;
+  position: relative;
+}
+
+/* ВЕРХ */
+.intro-top {
+  padding: 1rem 2rem 0 2rem;
+  text-align: center;
 }
 
 .logo-paragraph {
@@ -74,41 +84,61 @@ body {
   line-height: 1.2;
 }
 
-header {
-  max-width: 100%;
-  text-align: center;
+.bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  background-color: #1e1918;
 }
 
-header h1 {
+/* ЦЕНТР */
+.intro-middle {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.intro-header h1 {
   font-family: 'Impact', sans-serif;
   font-size: 96px;
-  line-height: 1.1;
   color: white;
-  margin: 0.5rem 0;
-  letter-spacing: 2px;
+  margin: 0;
 }
 
-header h2 {
+.intro-header h2 {
   font-family: 'Calibri Light', 'Calibri', sans-serif;
   font-size: 32px;
   font-weight: 300;
-  line-height: 1.2;
   color: white;
   margin-top: 1rem;
 }
 
-header p {
-  font-family: 'Consolas', 'Courier New', monospace;
+/* НИЗ */
+.intro-bottom {
+  padding: 1rem 2rem 2.5rem;
+  position: relative;
+}
+
+.intro-description {
+  text-align: center;
   font-size: 1.1rem;
   color: white;
-  margin-top: 8rem;
-  margin-bottom: 4rem;
-  line-height: 0.9;
-  white-space: pre-line;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
 }
 
 .skills {
-  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .skills ul {
@@ -117,11 +147,12 @@ header p {
   list-style: none;
   padding-left: 0;
   gap: 0.5rem;
+  justify-content: center;
 }
 
 .skills li {
   background-color: #171717;
-  color: #ffffff;
+  color: white;
   border: 1px solid white;
   padding: 0.4rem 1rem;
   border-radius: 999px;
@@ -216,15 +247,28 @@ footer p {
 ----------------------------------------------------- */
 
 @media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
+  .intro-header h1 {
+    font-size: 2.5rem;
   }
 
-  header h2 {
+  .intro-header h2 {
     font-size: 1.2rem;
+  }
+
+  .intro-description {
+    font-size: 1rem;
   }
 
   .logo-paragraph {
     font-size: 2rem;
+  }
+
+  .skills li {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .intro-bottom {
+    padding-bottom: 2.5rem; /* оставить пространство над полосой */
   }
 }
