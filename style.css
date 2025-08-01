@@ -53,15 +53,14 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 6rem; /* минимальная высота панели */
+  height: 2rem; /* ← фиксированная высота, как ты хочешь */
   padding: 0 2rem;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
-  justify-content: center;   /* выравнивание по вертикали */
-  align-items: center;       /* выравнивание по горизонтали */
+  align-items: center;   /* ← выравнивает по вертикали */
+  justify-content: center; /* ← по горизонтали */
   background-color: transparent;
-  pointer-events: none; /* чтобы не мешать клику на слайде */
+  pointer-events: none;
 }
 
 /* ЛОГО */
@@ -72,14 +71,20 @@ body {
   margin: 0;
   line-height: 1;
   text-align: center;
+  position: relative;
 }
 
 /* ЛИНИЯ ПОД ЛОГО */
-.logo-underline {
-  margin-top: 0.4rem;
+.logo-paragraph::after {
+  content: "";
+  display: block;
+  width: 100vw; /* во всю ширину экрана */
   height: 4px;
   background-color: #1d1918;
-  width: 100%;
+  margin-top: 0.4rem;
+  position: absolute;
+  left: 0;
+  bottom: -0.6rem; /* настраивается под отступ */
 }
 
 /* ЦЕНТРАЛЬНАЯ ЧАСТЬ */
