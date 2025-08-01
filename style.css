@@ -53,15 +53,15 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 6rem; /* ← ключевая строка */
+  min-height: 6rem; /* минимальная высота панели */
   padding: 0 2rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* ← это выравнивает по вертикали */
-  align-items: center;
+  justify-content: center;   /* выравнивание по вертикали */
+  align-items: center;       /* выравнивание по горизонтали */
   background-color: transparent;
-  pointer-events: none;
+  pointer-events: none; /* чтобы не мешать клику на слайде */
 }
 
 /* ЛОГО */
@@ -76,7 +76,7 @@ body {
 
 /* ЛИНИЯ ПОД ЛОГО */
 .logo-underline {
-  margin-top: 0.3rem;
+  margin-top: 0.4rem;
   height: 4px;
   background-color: #1d1918;
   width: 100%;
