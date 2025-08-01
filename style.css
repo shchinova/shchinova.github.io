@@ -13,6 +13,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'DaMiOne';
+  src: url('/DaMiOne.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* -----------------------------------------------------
    БАЗОВЫЕ НАСТРОЙКИ
 ----------------------------------------------------- */
