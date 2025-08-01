@@ -28,15 +28,15 @@ body {
   position: sticky;
   top: 0;
   height: 100vh;
-  padding: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 6rem; /* отступ вниз от логотипа */
+  box-sizing: border-box;
+  overflow: hidden; /* ← важно */
   z-index: 0;
   transition: transform 0.3s ease;
-  overflow-y: auto;
-  box-sizing: border-box;
 }
 
 /* -----------------------------------------------------
@@ -45,17 +45,21 @@ body {
 .slide-intro {
   background: #201b19;
   z-index: 1;
-  position: relative;
 }
 
-/* ОБЁРТКА ЛОГО И ЛИНИИ */
-.logo-wrapper {
+/* ВЕРХНЯЯ ПАНЕЛЬ */
+.logo-bar {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 2rem;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent; /* без фона, чтобы не перекрывать слайд */
+  pointer-events: none; /* ← чтобы клик не ловила */
 }
 
 /* ЛОГО */
@@ -63,9 +67,9 @@ body {
   font-family: 'Kill';
   font-size: 3rem;
   color: #bda7ff;
-  text-align: center;
   margin: 0;
   line-height: 1.2;
+  text-align: center;
 }
 
 /* ЛИНИЯ ПОД ЛОГО */
@@ -83,6 +87,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 /* === ХЕДЕР === */
