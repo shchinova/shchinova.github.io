@@ -53,14 +53,22 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 6rem; /* ← фиксированная высота, как ты хочешь */
+  height: 6rem;
   padding: 0 2rem;
   box-sizing: border-box;
   display: flex;
-  align-items: center;   /* ← выравнивает по вертикали */
-  justify-content: center; /* ← по горизонтали */
+  align-items: center;
+  justify-content: center;
   background-color: transparent;
   pointer-events: none;
+}
+
+/* Обёртка, которая содержит текст и линию */
+.logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: auto; /* если логотип нужно сделать кликабельным */
 }
 
 /* ЛОГО */
@@ -71,20 +79,14 @@ body {
   margin: 0;
   line-height: 1;
   text-align: center;
-  position: relative;
 }
 
-/* ЛИНИЯ ПОД ЛОГО */
-.logo-paragraph::after {
-  content: "";
-  display: block;
-  width: 100vw; /* во всю ширину экрана */
+/* ЛИНИЯ */
+.logo-underline {
+  margin-top: 0.4rem;
   height: 4px;
   background-color: #1d1918;
-  margin-top: 0.4rem;
-  position: absolute;
-  left: 0;
-  bottom: -0.6rem; /* настраивается под отступ */
+  width: 100vw; /* ← на всю ширину экрана */
 }
 
 /* ЦЕНТРАЛЬНАЯ ЧАСТЬ */
