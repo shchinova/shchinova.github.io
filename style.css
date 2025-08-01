@@ -1,3 +1,6 @@
+/* -----------------------------------------------------
+   ШРИФТЫ
+----------------------------------------------------- */
 @font-face {
   font-family: 'Impact';
   src: url('/impact.ttf') format('truetype');
@@ -14,6 +17,9 @@
   src: url('/kill.otf') format('opentype');
 }
 
+/* -----------------------------------------------------
+   ПЕРЕМЕННЫЕ И БАЗОВЫЕ НАСТРОЙКИ
+----------------------------------------------------- */
 :root {
   --main-color: #2b2d42;
   --accent-color: #8d99ae;
@@ -35,43 +41,50 @@ body {
   overflow-x: hidden;
 }
 
+/* -----------------------------------------------------
+   СЛАЙДЫ
+----------------------------------------------------- */
 .slide {
   position: sticky;
   top: 0;
   height: 100vh;
   display: flex;
-  justify-content: flex-start; /* вместо center */
-  align-items: flex-start; /* можно тоже, если нужно */
-  padding: 4rem 4rem 4rem 8rem; /* было 2 */
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 4rem 4rem 4rem 8rem;
   z-index: 0;
   transition: transform 0.3s ease;
   overflow-y: auto;
 }
 
+/* Слайд: Введение */
 .slide-intro {
   background: #171717;
   z-index: 1;
-  /* Центрирование содержимого по горизонтали и вертикали */
   justify-content: center;
   align-items: center;
 }
 
+/* Слайд: Проекты */
 .slide-projects {
   background: #f3f5f7;
   z-index: 2;
   box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
 }
 
+/* Слайд: Контакты */
 .slide-contact {
   background: #171717;
   z-index: 3;
   box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
 }
 
-/* HEADER */
+/* -----------------------------------------------------
+   HEADER
+----------------------------------------------------- */
 header {
   max-width: 100%;
-  text-align: center; /* заменили left → center */
+  text-align: center;
 }
 
 header h1 {
@@ -80,25 +93,16 @@ header h1 {
   line-height: 1.1;
   color: white;
   margin: 0.5rem 0;
-  letter-spacing: 2px; /* добавлено */
+  letter-spacing: 2px;
 }
 
 header h2 {
   font-family: 'Calibri Light', 'Calibri', sans-serif;
   font-size: 32px;
-  font-weight: 300; /* Light */
+  font-weight: 300;
   line-height: 1.2;
   color: white;
   margin-top: 1rem;
-}
-
-.logo-paragraph {
-  font-family: 'Kill';
-  font-size: 4rem; /* было 1.1 */
-  color: #d1baff;
-  text-align: center;
-  margin: 2rem 0;
-  line-height: 1.2;
 }
 
 header p {
@@ -106,12 +110,24 @@ header p {
   font-size: 1.1rem;
   color: white;
   margin-top: 8rem;
-  margin-bottom: 4rem; /* было 2 - увеличила отступы */
-  line-height: 0.9; /* было 1.1 — уменьшила */
+  margin-bottom: 4rem;
+  line-height: 0.9;
   white-space: pre-line;
 }
 
-/* Skills */
+/* Логотип-абзац (отдельный декоративный текст) */
+.logo-paragraph {
+  font-family: 'Kill';
+  font-size: 4rem;
+  color: #d1baff;
+  text-align: center;
+  margin: 2rem 0;
+  line-height: 1.2;
+}
+
+/* -----------------------------------------------------
+   SKILLS
+----------------------------------------------------- */
 .skills {
   margin-top: 1.5rem;
 }
@@ -129,11 +145,13 @@ header p {
   color: #ffffff;
   border: 1px solid white;
   padding: 0.4rem 1rem;
-  border-radius: 999px; /* было 12 — увеличила */
+  border-radius: 999px;
   font-size: 0.95rem;
 }
 
-/* Projects */
+/* -----------------------------------------------------
+   PROJECTS
+----------------------------------------------------- */
 .projects {
   max-width: 1000px;
   text-align: center;
@@ -172,7 +190,9 @@ header p {
   font-size: 0.95rem;
 }
 
-/* Footer / Contacts */
+/* -----------------------------------------------------
+   FOOTER / CONTACTS
+----------------------------------------------------- */
 footer {
   text-align: center;
 }
@@ -198,8 +218,19 @@ footer p {
   color: #666;
 }
 
+/* -----------------------------------------------------
+   АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ
+----------------------------------------------------- */
 @media (max-width: 600px) {
-  header h1 { font-size: 2rem; }
-  header h2 { font-size: 1.2rem; }
-  .logo-paragraph { font-size: 2rem; }
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header h2 {
+    font-size: 1.2rem;
+  }
+
+  .logo-paragraph {
+    font-size: 2rem;
+  }
 }
