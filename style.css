@@ -77,7 +77,7 @@ body {
   pointer-events: none;
 }
 
-/* Обёртка, которая содержит текст и линию */
+/* КОНТЕЙНЕР ДЛЯ ЛОГО И ЛИНИИ */
 .logo-wrapper {
   display: flex;
   flex-direction: column;
@@ -134,7 +134,7 @@ header h2 {
 
 .space-between {
   display: inline-block;
-  width: 5cm; /* или 200px, если хочешь точнее подстроить под экран */
+  width: 100px; /* или 200px, если хочешь точнее подстроить под экран */
 }
 
 header p {
