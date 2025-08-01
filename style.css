@@ -56,6 +56,20 @@ body {
   line-height: 1.2;
 }
 
+/* === ФОТО === */
+.intro-photo {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-photo img {
+  width: 100px;        /* маленький размер */
+  height: 100px;
+  object-fit: cover;   /* обрезка по кругу */
+  border-radius: 50%;  /* делает изображение круглым */
+}
+
 /* === ХЕДЕР === */
 header {
   text-align: center;
