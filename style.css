@@ -93,9 +93,9 @@ header h2 {
 }
 
 .logo-paragraph {
-  font-family: 'Kill', sans-serif;
-  font-size: 1.1rem;
-  color: #bda7ff;
+  font-family: 'Kill';
+  font-size: 4rem; /* было 1.1 */
+  color: #d1baff;
   text-align: center;
   margin: 2rem 0;
   line-height: 1.2;
@@ -201,4 +201,5 @@ footer p {
 @media (max-width: 600px) {
   header h1 { font-size: 2rem; }
   header h2 { font-size: 1.2rem; }
+  .logo-paragraph { font-size: 2rem; }
 }
