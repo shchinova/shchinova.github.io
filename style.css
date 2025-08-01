@@ -1,35 +1,14 @@
 /* -----------------------------------------------------
    ШРИФТЫ
 ----------------------------------------------------- */
-
-@font-face {
-  font-family: 'Impact';
-  src: url('/impact.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Calibri Light';
-  src: url('/calibri_light.ttf') format('truetype');
-  font-weight: 300;
-}
-
 @font-face {
   font-family: 'Kill';
   src: url('/kill.otf') format('opentype');
 }
 
 /* -----------------------------------------------------
-   ПЕРЕМЕННЫЕ И БАЗОВЫЕ НАСТРОЙКИ
+   БАЗОВЫЕ НАСТРОЙКИ
 ----------------------------------------------------- */
-
-:root {
-  --main-color: #2b2d42;
-  --accent-color: #8d99ae;
-  --bg-color: #edf2f4;
-  --text-color: #2b2d42;
-  --highlight: #ef233c;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -38,103 +17,98 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: var(--bg-color);
-  color: var(--text-color);
+  color: #ffffff;
   overflow-x: hidden;
 }
 
+/* -----------------------------------------------------
+   ОБЩИЕ СТИЛИ ДЛЯ СЛАЙДОВ
+----------------------------------------------------- */
 .slide {
   position: sticky;
   top: 0;
   height: 100vh;
+  padding: 4rem;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 4rem 4rem 4rem 8rem;
+  justify-content: center;
+  align-items: center;
   z-index: 0;
   transition: transform 0.3s ease;
   overflow-y: auto;
 }
 
 /* -----------------------------------------------------
-   СЛАЙД ИНТРО
+   ИНФО-СЛАЙД
 ----------------------------------------------------- */
-
 .slide-intro {
-  background: #171717;
+  background: #201b19;
   z-index: 1;
 }
 
+/* === ЛОГОТИП === */
 .logo-paragraph {
   font-family: 'Kill';
   font-size: 3rem;
-  color: #d1baff;
+  color: #bda7ff;
   text-align: center;
   margin: 2rem 0;
   line-height: 1.2;
 }
 
+/* === ХЕДЕР === */
 header {
-  max-width: 100%;
-  text-align: left;
+  text-align: center;
+  max-width: 800px;
 }
 
 header h1 {
-  font-family: 'Impact', sans-serif;
-  font-size: 96px;
-  color: white;
-  margin: 0;
+  font-size: 2.5rem;
 }
 
 header h2 {
-  font-family: 'Calibri Light', 'Calibri', sans-serif;
-  font-size: 32px;
-  font-weight: 300;
-  color: white;
-  margin-top: 1rem;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
 }
 
 header p {
-  font-family: 'Consolas', 'Courier New', monospace;
-  font-size: 1.1rem;
-  color: white;
-  margin-top: 8rem;
-  margin-bottom: 4rem;
-  line-height: 0.9;
-  white-space: pre-line;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
+/* === НАВЫКИ === */
 .skills {
   margin-top: 1.5rem;
 }
 
 .skills ul {
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
-  list-style: none;
-  padding-left: 0;
-  gap: 0.5rem;
+  gap: 12px;
 }
 
 .skills li {
   background-color: #171717;
-  color: #ffffff;
   border: 1px solid white;
-  padding: 0.4rem 1rem;
   border-radius: 999px;
-  font-size: 0.95rem;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-family: 'Courier New', Consolas, monospace;
 }
 
 /* -----------------------------------------------------
-   СЛАЙД ПРОЕКТЫ
+   СЛАЙД С ПРОЕКТАМИ
 ----------------------------------------------------- */
-
 .slide-projects {
   background: #f3f5f7;
+  color: #000;
   z-index: 2;
-  box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* === ПРОЕКТЫ === */
 .projects {
   max-width: 1000px;
   text-align: center;
@@ -143,7 +117,6 @@ header p {
 .projects h3 {
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: var(--main-color);
 }
 
 .project-grid {
@@ -153,10 +126,11 @@ header p {
 }
 
 .project {
-  background: var(--bg-color);
+  background: #2e2a29;
+  color: #fff;
   border-radius: 10px;
   padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
 }
 
@@ -166,7 +140,6 @@ header p {
 
 .project h4 {
   margin-bottom: 0.5rem;
-  color: var(--highlight);
 }
 
 .project p {
@@ -174,15 +147,15 @@ header p {
 }
 
 /* -----------------------------------------------------
-   СЛАЙД КОНТАКТЫ
+   СЛАЙД С КОНТАКТАМИ
 ----------------------------------------------------- */
-
 .slide-contact {
-  background: #171717;
+  background: #201b19;
   z-index: 3;
-  box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* === КОНТАКТЫ === */
 footer {
   text-align: center;
 }
@@ -194,13 +167,9 @@ footer {
 .contacts a {
   display: inline-block;
   margin: 0.5rem;
-  color: var(--main-color);
   text-decoration: none;
   font-weight: 500;
-}
-
-.contacts a:hover {
-  color: var(--highlight);
+  color: inherit;
 }
 
 footer p {
@@ -211,8 +180,16 @@ footer p {
 /* -----------------------------------------------------
    АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ
 ----------------------------------------------------- */
-
 @media (max-width: 600px) {
-  header h1 { font-size: 2rem; }
-  header h2 { font-size: 1.2rem; }
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header h2 {
+    font-size: 1.2rem;
+  }
+
+  .logo-paragraph {
+    font-size: 2rem;
+  }
 }
