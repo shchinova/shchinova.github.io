@@ -30,12 +30,13 @@ body {
   height: 100vh;
   padding: 4rem;
   display: flex;
-  flex-direction: column; /* ← добавь это */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 0;
   transition: transform 0.3s ease;
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
 /* -----------------------------------------------------
@@ -44,16 +45,44 @@ body {
 .slide-intro {
   background: #201b19;
   z-index: 1;
+  position: relative;
 }
 
-/* === ЛОГОТИП === */
+/* ОБЁРТКА ЛОГО И ЛИНИИ */
+.logo-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+/* ЛОГО */
 .logo-paragraph {
   font-family: 'Kill';
   font-size: 3rem;
   color: #bda7ff;
   text-align: center;
-  margin: 2rem 0;
+  margin: 0;
   line-height: 1.2;
+}
+
+/* ЛИНИЯ ПОД ЛОГО */
+.logo-underline {
+  margin-top: 0.5rem;
+  height: 4px;
+  background-color: #1d1918;
+  width: 100%;
+}
+
+/* ЦЕНТРАЛЬНАЯ ЧАСТЬ */
+.slide-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* === ХЕДЕР === */
