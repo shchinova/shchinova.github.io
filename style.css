@@ -41,9 +41,6 @@ body {
   overflow-x: hidden;
 }
 
-/* -----------------------------------------------------
-   СЛАЙДЫ
------------------------------------------------------ */
 .slide {
   position: sticky;
   top: 0;
@@ -57,7 +54,10 @@ body {
   overflow-y: auto;
 }
 
-/* Слайд: Введение */
+/* -----------------------------------------------------
+   СЛАЙД ИНТРО
+----------------------------------------------------- */
+
 .slide-intro {
   background: #171717;
   z-index: 1;
@@ -65,23 +65,15 @@ body {
   align-items: center;
 }
 
-/* Слайд: Проекты */
-.slide-projects {
-  background: #f3f5f7;
-  z-index: 2;
-  box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+.logo-paragraph {
+  font-family: 'Kill';
+  font-size: 3rem; /* ❗ было 4 */
+  color: #d1baff;
+  text-align: center;
+  margin: 2rem 0;
+  line-height: 1.2;
 }
 
-/* Слайд: Контакты */
-.slide-contact {
-  background: #171717;
-  z-index: 3;
-  box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
-}
-
-/* -----------------------------------------------------
-   HEADER
------------------------------------------------------ */
 header {
   max-width: 100%;
   text-align: center;
@@ -115,19 +107,6 @@ header p {
   white-space: pre-line;
 }
 
-/* Логотип-абзац (отдельный декоративный текст) */
-.logo-paragraph {
-  font-family: 'Kill';
-  font-size: 3rem; /* ❗ было 4 */
-  color: #d1baff;
-  text-align: center;
-  margin: 2rem 0;
-  line-height: 1.2;
-}
-
-/* -----------------------------------------------------
-   SKILLS
------------------------------------------------------ */
 .skills {
   margin-top: 1.5rem;
 }
@@ -150,8 +129,15 @@ header p {
 }
 
 /* -----------------------------------------------------
-   PROJECTS
+   СЛАЙД ПРОЕКТЫ
 ----------------------------------------------------- */
+
+.slide-projects {
+  background: #f3f5f7;
+  z-index: 2;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+}
+
 .projects {
   max-width: 1000px;
   text-align: center;
@@ -191,8 +177,15 @@ header p {
 }
 
 /* -----------------------------------------------------
-   FOOTER / CONTACTS
+   СЛАЙД КОНТАКТЫ
 ----------------------------------------------------- */
+
+.slide-contact {
+  background: #171717;
+  z-index: 3;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+}
+
 footer {
   text-align: center;
 }
@@ -219,8 +212,9 @@ footer p {
 }
 
 /* -----------------------------------------------------
-   АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ
+   АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ
 ----------------------------------------------------- */
+
 @media (max-width: 600px) {
   header h1 {
     font-size: 2rem;
