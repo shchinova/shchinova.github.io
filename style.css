@@ -35,21 +35,17 @@ body {
   overflow-x: hidden;
 }
 
-/* -----------------------------------------------------
-   ОБЩИЕ СТИЛИ ДЛЯ СЛАЙДОВ
------------------------------------------------------ */
 .slide {
   position: sticky;
   top: 0;
   height: 100vh;
-   width: 100%; /* новое */
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding-top: 6rem; /* отступ вниз от логотипа */
+  align-items: center; /* убрала ниже padding-top: 6rem; */
   box-sizing: border-box;
-  overflow: hidden; /* ← важно */
+  overflow: hidden;
   z-index: 0;
   transition: transform 0.3s ease;
 }
@@ -94,7 +90,7 @@ body {
   margin: 0;
   line-height: 1;
   text-align: center;
-   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  text-shadow: 3px 3px 6px #13100F;
 }
 
 /* ЛИНИЯ */
@@ -109,12 +105,12 @@ body {
 .position {
   font-family: 'IBM';
   font-size: 1.2rem;
-  letter-spacing: 1.45rem; /* 1.5 много */
+  letter-spacing: 1.55rem;
   text-transform: uppercase;
   margin: 0;
   margin-bottom: 1rem;
   white-space: nowrap;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  text-shadow: 3px 3px 6px #13100F;
    color: white;
 }
 
@@ -123,9 +119,10 @@ body {
   font-family: 'DaMiOne';
   font-size: 4.5rem;
   margin: 0;
+  margin-bottom: 1rem;
   text-align: center;
   letter-spacing: 0.05rem; /* можешь попробовать уменьшить или убрать */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  text-shadow: 3px 3px 6px #13100F;
   color: white;
 }
 
@@ -133,13 +130,14 @@ body {
 .footer-line {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: 'IBM';
   font-size: 1.2rem;
   text-transform: uppercase;
-  margin: 0;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-  /* white-space: nowrap; ← УДАЛИ или закомментируй */
+  white-space: nowrap;
+  text-shadow: 3px 3px 6px #13100F;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .name {
@@ -148,11 +146,6 @@ body {
 
 .year {
    color: #798089;
-}
-
-/* РАСТЯЖКА МЕЖДУ ИМЕНЕМ И ГОДОМ */
-.spacer {
-  flex: 1; /* ← теперь будет работать */
 }
 
 /* -----------------------------------------------------
