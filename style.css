@@ -11,7 +11,7 @@
   src: url('/IBM.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-} /* должность и год */
+} /* должность, имя, год */
 
 @font-face {
   font-family: 'DaMiOne';
@@ -19,32 +19,6 @@
   font-weight: normal;
   font-style: normal;
 } /* портфолио */
-
-@font-face {
-  font-family: 'Bounded';
-  src: url('/Bounded.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-} /* имя вар 1 */
-
-@font-face {
-  font-family: 'satoshi';
-  src: url('/satoshi.otf') format('opentype');
-} /* имя вар 2 */
-
-@font-face {
-  font-family: 'Citrica';
-  src: url('/Citrica.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-} /* имя вар 3 */
-
-@font-face {
-  font-family: 'Forest';
-  src: url('/Forest.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-} /* имя вар 4 */
 
 /* -----------------------------------------------------
    БАЗОВЫЕ НАСТРОЙКИ
@@ -134,7 +108,7 @@ body {
 .position {
   font-family: 'IBM';
   font-size: 1.2rem;
-  letter-spacing: 1.5rem; /* было 1.1 */
+  letter-spacing: 1.4rem; /* 1.5 много */
   text-transform: uppercase;
   margin: 0;
   margin-bottom: 1rem;
@@ -154,27 +128,21 @@ body {
 
 /* 3-я строка — ИМЯ И ГОД */
 .footer-line {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 700px;
-  padding: 0 2rem;
-  margin-top: 1rem;
+  font-family: 'IBM';
   font-size: 1.2rem;
+  letter-spacing: 1.4rem; /* 1.5 много */
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
 .name {
-  font-family: 'Forest';
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-   color: white;
+   color: #bda7ff;
 }
 
 .year {
-  font-family: 'IBM'; /* шрифт 4, можно изменить */
-  font-weight: normal;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
    color: #798089;
 }
 
