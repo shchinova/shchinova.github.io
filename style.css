@@ -42,6 +42,7 @@ body {
   position: sticky;
   top: 0;
   height: 100vh;
+   width: 100%; /* новое */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -132,7 +133,6 @@ body {
 .footer-line {
   display: flex;           /* Добавить это */
   align-items: center;
-  justify-content: space-between; /* Или оставить как есть с .spacer */
   font-family: 'IBM';
   font-size: 1.2rem;
   text-transform: uppercase;
