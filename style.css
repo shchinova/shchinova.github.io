@@ -131,15 +131,15 @@ body {
 
 /* 3-я строка — ИМЯ И ГОД */
 .footer-line {
-  display: flex;           /* Добавить это */
+  display: flex;
   align-items: center;
   font-family: 'IBM';
   font-size: 1.2rem;
   text-transform: uppercase;
   margin: 0;
   margin-bottom: 1rem;
-  white-space: nowrap;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  /* white-space: nowrap; ← УДАЛИ или закомментируй */
 }
 
 .name {
