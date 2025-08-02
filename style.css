@@ -39,6 +39,11 @@
   font-style: normal;
 } /* имя вар 3 */
 
+@font-face {
+  font-family: 'Imperial';
+  src: url('/Imperial.otf') format('opentype');
+} /* имя вар 4 */
+
 /* -----------------------------------------------------
    БАЗОВЫЕ НАСТРОЙКИ
 ----------------------------------------------------- */
@@ -157,7 +162,7 @@ body {
 }
 
 .name {
-  font-family: 'Citrica', sans-serif; /* шрифт 3 */
+  font-family: 'Imperial', sans-serif; /* шрифт 3 */
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
    color: white;
@@ -167,7 +172,7 @@ body {
   font-family: 'IBM'; /* шрифт 4, можно изменить */
   font-weight: normal;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-   color: #6a6b6f;
+   color: #bcbec2;
 }
 
 /* РАСТЯЖКА МЕЖДУ ИМЕНЕМ И ГОДОМ */
