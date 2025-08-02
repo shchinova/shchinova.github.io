@@ -40,8 +40,10 @@
 } /* имя вар 3 */
 
 @font-face {
-  font-family: 'Imperial';
-  src: url('/Imperial.otf') format('opentype');
+  font-family: 'Forest';
+  src: url('/Forest.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 } /* имя вар 4 */
 
 /* -----------------------------------------------------
@@ -131,7 +133,7 @@ body {
 .position {
   font-family: 'IBM';
   font-size: 1.2rem;
-  letter-spacing: 1.4rem; /* было 1.1 */
+  letter-spacing: 1.5rem; /* было 1.1 */
   text-transform: uppercase;
   margin: 0;
   margin-bottom: 1rem;
@@ -162,7 +164,7 @@ body {
 }
 
 .name {
-  font-family: 'Imperial'; /* шрифт 3 */
+  font-family: 'Forest';
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
    color: white;
@@ -172,7 +174,7 @@ body {
   font-family: 'IBM'; /* шрифт 4, можно изменить */
   font-weight: normal;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-   color: #bcbec2;
+   color: #798089;
 }
 
 /* РАСТЯЖКА МЕЖДУ ИМЕНЕМ И ГОДОМ */
