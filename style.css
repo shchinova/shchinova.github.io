@@ -126,7 +126,7 @@ body {
 .position {
   font-family: 'IBM', sans-serif;
   font-size: 1.2rem;
-  letter-spacing: 1.3rem; /* было 1.1 */
+  letter-spacing: 1.4rem; /* было 1.1 */
   text-transform: uppercase;
   margin: 0;
   margin-bottom: 1rem;
@@ -153,7 +153,7 @@ body {
   max-width: 700px;
   padding: 0 2rem;
   margin-top: 1rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .name {
@@ -164,10 +164,10 @@ body {
 }
 
 .year {
-  font-family: 'IBM', sans-serif; /* шрифт 4, можно изменить */
+  font-family: 'IBM'; /* шрифт 4, можно изменить */
   font-weight: normal;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-   color: #7f7f7f;
+   color: #6a6b6f;
 }
 
 /* РАСТЯЖКА МЕЖДУ ИМЕНЕМ И ГОДОМ */
