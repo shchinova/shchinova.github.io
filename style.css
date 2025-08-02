@@ -119,6 +119,7 @@ body {
   margin: 0;
   line-height: 1;
   text-align: center;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
 /* ЛИНИЯ */
