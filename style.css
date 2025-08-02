@@ -119,15 +119,20 @@ body {
 
 /* 2-я строка — ПОРТФОЛИО */
 .title {
-  font-family: 'DaMiOne'; /* шрифт 2 — более жирный */
+  font-family: 'DaMiOne';
   font-size: 4.5rem;
   margin: 0;
+  text-align: center;
+  letter-spacing: 0.05rem; /* можешь попробовать уменьшить или убрать */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-   color: white;
+  color: white;
 }
 
 /* 3-я строка — ИМЯ И ГОД */
 .footer-line {
+  display: flex;           /* Добавить это */
+  align-items: center;
+  justify-content: space-between; /* Или оставить как есть с .spacer */
   font-family: 'IBM';
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -138,7 +143,7 @@ body {
 }
 
 .name {
-   color: #bda7ff;
+   color: #D6C9FF;
 }
 
 .year {
@@ -147,7 +152,7 @@ body {
 
 /* РАСТЯЖКА МЕЖДУ ИМЕНЕМ И ГОДОМ */
 .spacer {
-  flex: 1;
+  flex: 1; /* ← теперь будет работать */
 }
 
 /* -----------------------------------------------------
