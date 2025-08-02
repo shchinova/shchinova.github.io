@@ -103,7 +103,7 @@ body {
   width: 100vw; /* ← на всю ширину экрана */
 }
 
-/* 1-я строка — Должность */
+/* 1-я строка — ДОЛЖНОСТЬ */
 .position {
   font-family: 'IBM', sans-serif;
   font-size: 1.2rem;
@@ -115,15 +115,15 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* 2-я строка — Портфолио */
+/* 2-я строка — ПОРТФОЛИО */
 .title {
   font-family: 'DaMiOne', sans-serif; /* шрифт 2 — более жирный */
-  font-size: 5rem;
+  font-size: 4.5rem;
   margin: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* 3-я строка — Имя и год */
+/* 3-я строка — ИМЯ И ГОД */
 .footer-line {
   display: flex;
   justify-content: space-between;
@@ -147,7 +147,7 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Невидимая растяжка между именем и годом */
+/* РАСТЯЖКА МЕЖДУ ИМЕНЕМ И ГОДОМ */
 .spacer {
   flex: 1;
 }
