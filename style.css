@@ -114,7 +114,7 @@ body {
 .position {
   font-family: 'IBM', sans-serif;
   font-size: 1.2rem;
-  letter-spacing: 1.1rem; /* вручную подбирай под ширину "PORTFOLIO" */
+  letter-spacing: 1.3rem; /* было 1.1 */
   text-transform: uppercase;
   margin: 0;
   margin-bottom: 1rem;
