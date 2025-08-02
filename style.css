@@ -108,7 +108,7 @@ body {
 .position {
   font-family: 'IBM';
   font-size: 1.2rem;
-  letter-spacing: 1.4rem; /* 1.5 много */
+  letter-spacing: 1.45rem; /* 1.5 много */
   text-transform: uppercase;
   margin: 0;
   margin-bottom: 1rem;
@@ -130,7 +130,6 @@ body {
 .footer-line {
   font-family: 'IBM';
   font-size: 1.2rem;
-  letter-spacing: 1.4rem; /* 1.5 много */
   text-transform: uppercase;
   margin: 0;
   margin-bottom: 1rem;
