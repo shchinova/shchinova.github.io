@@ -20,6 +20,11 @@
   font-style: normal;
 } /* портфолио */
 
+@font-face {
+  font-family: 'satoshi';
+  src: url('/satoshi.otf') format('opentype');
+} /* ДОЛЖНОСТЬ, ИМЯ, ГОД - ВАР 2 */
+
 /* -----------------------------------------------------
    БАЗОВЫЕ НАСТРОЙКИ
 ----------------------------------------------------- */
@@ -103,15 +108,15 @@ body {
 
 /* 1-я строка — ДОЛЖНОСТЬ */
 .position {
-  font-family: 'IBM';
-  font-size: 1.2rem;
-  letter-spacing: 1.55rem;
+  font-family: 'satoshi';
+  font-size: 1.1rem;
+  letter-spacing: 1.02rem;
   text-transform: uppercase;
   margin: 0;
   margin-bottom: 1rem;
   white-space: nowrap;
   text-shadow: 3px 3px 6px #13100F;
-   color: white;
+  color: #798089;
 }
 
 /* 2-я строка — ПОРТФОЛИО */
@@ -123,7 +128,7 @@ body {
   text-align: center;
   letter-spacing: 0.05rem; /* можешь попробовать уменьшить или убрать */
   text-shadow: 3px 3px 6px #13100F;
-  color: white;
+  color: #ffffff;
 }
 
 /* 3-я строка — ИМЯ И ГОД */
@@ -131,21 +136,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'IBM';
-  font-size: 1.2rem;
+  font-family: 'satoshi';
+  font-size: 1.1rem;
   text-transform: uppercase;
   white-space: nowrap;
   text-shadow: 3px 3px 6px #13100F;
   width: 100%;
   box-sizing: border-box;
-}
-
-.name {
-   color: #D6C9FF;
-}
-
-.year {
-   color: #798089;
+  letter-spacing: 0.51rem;
 }
 
 /* -----------------------------------------------------
