@@ -21,7 +21,7 @@
 @font-face {
   font-family: 'Doloman';
   src: url('/Doloman.otf') format('opentype');
-} /* имя */
+} /* основной текст */
 
 /* -----------------------------------------------------
    БАЗОВЫЕ НАСТРОЙКИ
@@ -43,12 +43,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  height: 100vh;
+  height: 100vh;   
   width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
   z-index: 0;
   transition: transform 0.3s ease;
+  position: sticky;   
+  top: 0;
+  font-family: 'Doloman';
 }
 
 /* -----------------------------------------------------
@@ -58,7 +59,7 @@ body {
   background-color: #121212;
   color: #e6e6e6;
   min-height: 100vh;
-  font-family: 'Doloman';
+  z-index: 1;
 }
 
 /* ВЕРХНЯЯ ПАНЕЛЬ */
@@ -67,7 +68,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 3rem;
+  height: 4rem;
   padding: 0 2rem;
   box-sizing: border-box;
   display: flex;
@@ -83,13 +84,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 2; /* чтобы логотип был над линией */
+  z-index: 2; 
 }
 
 /* ЛОГО */
 .logo-paragraph {
   font-family: 'Kill';
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin: 0;
   line-height: 1;
   text-align: center;
@@ -126,7 +127,7 @@ body {
 
 /* ОСНОВНОЙ ЗАГОЛОВОК */
 .intro-portfolio {
-  font-family: 'DaMiOne', sans-serif;
+  font-family: 'DaMiOne';
   font-size: 5rem;
   font-weight: 600;
   letter-spacing: 2px;
@@ -167,7 +168,7 @@ body {
 .intro-footer {
   display: flex;             /* элементы в строку */
   gap: 0.5rem;               /* расстояние между плашками */
-  flex-wrap: wrap;           /* если не влезают, переход на новую строку */
+  flex-wrap: wrap;     
   align-items: center;
   font-size: 0.9rem;
   font-weight: 300;
@@ -179,9 +180,9 @@ body {
 .skill-badge {
   background-color: #121212;
   border: 1px solid #e6e6e6;
-  border-radius: 999px;      /* максимально закруглённые углы */
+  border-radius: 999px;    
   padding: 0.3rem 0.8rem;    /* вертикальный и горизонтальный внутренний отступ */
-  white-space: nowrap;        /* чтобы текст не переносился */
+  white-space: nowrap;    
   font-size: 1rem;
 }
 
