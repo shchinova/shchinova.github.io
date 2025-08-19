@@ -9,39 +9,45 @@
 </head>
 <body>
 
-<!-- ЛОГО + ЛИНИЯ -->
+<!-- ВЕРХНЯЯ ПАНЕЛЬ -->
 <div class="logo-bar">
-<div class="logo-wrapper">
-  <p class="logo-paragraph">Shchinova</p>
-  <div class="logo-underline"></div>
-</div>
+  <div class="logo-wrapper">
+    <p class="logo-paragraph">Shchinova</p>
+    <div class="logo-underline"></div> 
+  </div>
+
+  <!-- Прогресс-бар -->
+  <div class="progress-bar-container">
+    <div class="progress-bar"></div>
+  </div>
+
+  <!-- Навигация -->
+  <nav class="nav-links">
+    <a href="#home">About me</a>
+    <a href="#projects">Projects</a>
+    <a href="#contacts">Contacts</a>
+  </nav>
 </div>
 
 <!-- ВСТУПИТЕЛЬНЫЙ СЛАЙД -->
-
-<!-- ЛОГО + ЛИНИЯ -->
-<div class="logo-bar">
-<div class="logo-wrapper">
-  <p class="logo-paragraph">Shchinova</p>
-  <div class="logo-underline"></div>
-</div>
-</div>
-
-<section class="slide slide-intro">
+<section id="home" class="slide slide-intro">
 
   <!-- Блок заголовков -->
   <div class="intro-wrapper">
     <div class="intro-header">
       <h1 class="intro-portfolio">ПОРТФОЛИО</h1>
-      <p class="intro-name">Елена Щинова | Аналитик данных</p>
+      <p class="intro-name">Елена Щинова · Аналитик данных 
+        <font color="#757575">| Data Analytics Projects 2025</font></p>
     </div>
 
     <!-- Блок "О себе" с разделителем -->
     <div class="intro-about-wrapper">
       <hr class="intro-separator">
       <p class="intro-about">
-        Я аналитик данных с опытом работы в визуализации и анализе бизнес-процессов. 
-        Люблю превращать данные в понятные и наглядные решения.
+        Привет! Я аналитик данных, которому интересно собирать и структурировать информацию, искать закономерности
+        и формулировать выводы для принятия бизнес-решений.
+        Умею строить отчёты и дашборды и визуализировать результаты анализа.
+        Ищу команду, где смогу приносить пользу и постепенно развиваться в построении прогнозов и более сложном анализе.
       </p>
     </div>
     
@@ -51,6 +57,7 @@
       <span class="skill-badge">SQL</span>
       <span class="skill-badge">Tableau</span>
       <span class="skill-badge">Excel</span>
+      <span class="skill-badge">Google Sheets</span>
       <span class="skill-badge">Data Analysis</span>
     </div>
 
@@ -59,7 +66,7 @@
 </section>
 
 <!-- ПРОЕКТЫ -->
-<section class="slide slide-projects">
+<section id="projects" class="slide slide-projects">
 
     <div class="projects">
       <h3>Проекты</h3>
@@ -96,7 +103,7 @@
 </section>
 
 <!-- КОНТАКТЫ -->
-<section class="slide slide-contact">
+<section id="contacts" class="slide slide-contact">
 
     <footer>
 
