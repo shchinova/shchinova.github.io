@@ -1,38 +1,56 @@
-const slides   = [...document.querySelectorAll('.slide')];
-const navLinks = [...document.querySelectorAll('.nav-links a')];
-const header   = document.querySelector('.logo-bar');
+// -----------------------------------------------------
+// ЭЛЕМЕНТЫ DOM
+// -----------------------------------------------------
+const slides      = [...document.querySelectorAll('.slide')];
+const navLinks    = [...document.querySelectorAll('.nav-links a')];
+const header      = document.querySelector('.logo-bar');
 const progressBar = document.querySelector('.progress-bar');
 
-// Высота шапки
+// -----------------------------------------------------
+// ВЫСОТА ШАПКИ
+// -----------------------------------------------------
 function headerOffset() {
+  // возвращает высоту верхней панели, чтобы учитывать при скролле
   return header ? header.offsetHeight : 0;
 }
 
-// Подсветка активного пункта навигации
+// -----------------------------------------------------
+// ПОДСВЕТКА АКТИВНОГО ПУНКТА НАВИГАЦИИ
+// -----------------------------------------------------
 function updateActiveLink() {
-  const y = window.scrollY + headerOffset() + window.innerHeight * 0.4; // порог ~40% экрана
+  // позиция скролла + поправка на шапку и 40% высоты экрана
+  const y = window.scrollY + headerOffset() + window.innerHeight * 0.4;
   let currentIndex = 0;
+
   slides.forEach((slide, i) => {
     if (y >= slide.offsetTop) currentIndex = i;
   });
+
+  // убираем активный класс у всех ссылок
   navLinks.forEach(l => l.classList.remove('active'));
+
+  // добавляем активный класс текущей
   if (navLinks[currentIndex]) navLinks[currentIndex].classList.add('active');
 }
 
-// Прокрутка по клику с временным отключением sticky
+// -----------------------------------------------------
+// ПЛАВНАЯ ПРОКРУТКА ПО КЛИКУ
+// -----------------------------------------------------
 function smoothGoto(targetEl) {
   document.body.classList.add('body-disable-sticky');
 
-  const extraOffset = 18; // дополнительные пиксели для точной позиции
+  const extraOffset = 18; // дополнительные пиксели для точного позиционирования
   const targetTop = targetEl.getBoundingClientRect().top + window.scrollY - headerOffset() + extraOffset;
 
   window.scrollTo({ top: targetTop, behavior: 'smooth' });
 
+  // функция завершения прокрутки
   const finish = () => {
     document.body.classList.remove('body-disable-sticky');
     updateActiveLink();
   };
 
+  // проверка поддержки события scrollend
   if ('onscrollend' in window) {
     window.addEventListener('scrollend', finish, { once: true });
   } else {
@@ -45,25 +63,33 @@ function smoothGoto(targetEl) {
         lastY = window.scrollY;
       }
     }, 100);
+
+    // защита от зависания (макс. 1.2 сек)
     setTimeout(() => { clearInterval(id); finish(); }, 1200);
   }
 }
 
-// Обновление прогресс-бара
+// -----------------------------------------------------
+// ОБНОВЛЕНИЕ ПРОГРЕСС-БАРА
+// -----------------------------------------------------
 function updateProgressBar() {
   const scrollTop = window.scrollY;
   const docHeight = document.body.scrollHeight - window.innerHeight;
-  const progress = scrollTop / docHeight; // от 0 до 1
+  const progress  = scrollTop / docHeight; // значение от 0 до 1
   progressBar.style.transform = `scaleX(${progress})`;
 }
 
-// Объединённый обработчик скролла
+// -----------------------------------------------------
+// ОБЪЕДИНЁННЫЙ ОБРАБОТЧИК СКРОЛЛА
+// -----------------------------------------------------
 function onScroll() {
   updateActiveLink();
   updateProgressBar();
 }
 
-// Навигация по клику
+// -----------------------------------------------------
+// НАВИГАЦИЯ ПО КЛИКУ
+// -----------------------------------------------------
 navLinks.forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
@@ -72,13 +98,18 @@ navLinks.forEach(link => {
   });
 });
 
-// Подписка на события
+// -----------------------------------------------------
+// ПОДПИСКА НА СОБЫТИЯ
+// -----------------------------------------------------
 window.addEventListener('scroll', onScroll);
+
 window.addEventListener('resize', () => {
   updateActiveLink();
   updateProgressBar();
 });
 
-// Инициализация сразу
+// -----------------------------------------------------
+// ПЕРВИЧНАЯ ИНИЦИАЛИЗАЦИЯ
+// -----------------------------------------------------
 updateActiveLink();
 updateProgressBar();
