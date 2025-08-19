@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Портфолио | Shchinova</title>
+  <title>Портфолио | Елена Щинова</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
@@ -14,7 +14,7 @@
 
   <!-- Логотип -->
   <div class="logo-wrapper">
-    <p class="logo-paragraph">Shchinova</p>
+    <p class="logo-paragraph">Shchinova Elena</p>
     <div class="logo-underline"></div> 
   </div>
 
@@ -25,9 +25,9 @@
 
   <!-- Навигация -->
   <nav class="nav-links">
-    <a href="#home">About me</a>
-    <a href="#projects">Projects</a>
-    <a href="#contacts">Contacts</a>
+    <a href="#home" data-tooltip="Обо мне">About me</a>
+    <a href="#projects" data-tooltip="Проекты">Projects</a>
+    <a href="#contacts" data-tooltip="Контакты">Contacts</a>
   </nav>
 </div>
 
@@ -55,12 +55,31 @@
     
     <!-- Блок с навыками -->
     <div class="intro-footer">
-      <span class="skill-badge">Python</span>
-      <span class="skill-badge">SQL</span>
-      <span class="skill-badge">Tableau</span>
-      <span class="skill-badge">Excel</span>
-      <span class="skill-badge">Google Sheets</span>
-      <span class="skill-badge">Data Analysis</span>
+      <span class="skills-label">Skills:</span>
+      <span class="skill-badge" data-level-text="Базовый">
+        <span class="skill-name">Python</span>
+        <span class="skill-bar" data-level="33%"></span>
+      </span>
+      <span class="skill-badge" data-level-text="Базовый">
+        <span class="skill-name">SQL</span>
+        <span class="skill-bar" data-level="33%"></span>
+      </span>
+      <span class="skill-badge" data-level-text="Средний">
+        <span class="skill-name">Tableau</span>
+        <span class="skill-bar" data-level="66%"></span>
+      </span>
+      <span class="skill-badge" data-level-text="Продвинутый">
+        <span class="skill-name">Excel</span>
+        <span class="skill-bar" data-level="100%"></span>
+      </span>
+      <span class="skill-badge" data-level-text="Продвинутый">
+        <span class="skill-name">Google Sheets</span>
+        <span class="skill-bar" data-level="100%"></span>
+      </span>
+      <span class="skill-badge" data-level-text="Базовый">
+       <span class="skill-name">Data Analysis</span>
+        <span class="skill-bar" data-level="33%"></span>
+      </span>
     </div>
 
   </div>
