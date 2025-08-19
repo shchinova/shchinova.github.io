@@ -119,8 +119,7 @@ body {
 /* ЛОГО */
 .logo-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: center; /* выравнивание по вертикали */
   z-index: 2;
   margin-left: 6rem; /* отступ слева */
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
@@ -154,21 +153,25 @@ body {
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
+/* Базовый стиль */
 .nav-links a {
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-decoration: none;
-  transition: opacity 0.3s ease;
-  color: inherit;
+  transition: color 0.3s ease, font-size 0.3s ease; /* плавная анимация */
+  color: rgba(189, 167, 255, 0.323);
 }
 
-.nav-links a:hover {
-  opacity: 0.7;
-}
-
+/* Активная ссылка */
 .nav-links a.active {
-  text-decoration: underline;
-  text-underline-offset: 6px; /* чтобы подчёркивание было чуть ниже */
+  color: #bda7ff;
   font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* При наведении */
+.nav-links a:hover {
+  color: #bda7ff;
+  font-size: 1.3rem;
 }
 
 /* -----------------------------------------------------
