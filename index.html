@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body>
 
 <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
@@ -56,30 +58,37 @@
     <!-- Блок скиллов -->
     <div class="intro-footer">
       <span class="skills-label">Skills:</span>
+
       <span class="skill-badge" data-level-text="Базовый уровень">
         <span class="skill-name">Python</span>
         <span class="skill-bar" data-level="33%"></span>
       </span>
+
       <span class="skill-badge" data-level-text="Базовый уровень">
         <span class="skill-name">SQL</span>
         <span class="skill-bar" data-level="33%"></span>
       </span>
+
       <span class="skill-badge" data-level-text="Средний уровень">
         <span class="skill-name">Tableau</span>
         <span class="skill-bar" data-level="66%"></span>
       </span>
+
       <span class="skill-badge" data-level-text="Продвинутый уровень">
         <span class="skill-name">Excel</span>
         <span class="skill-bar" data-level="100%"></span>
       </span>
+
       <span class="skill-badge" data-level-text="Продвинутый уровень">
         <span class="skill-name">Google Sheets</span>
         <span class="skill-bar" data-level="100%"></span>
       </span>
+
       <span class="skill-badge" data-level-text="Базовый уровень">
        <span class="skill-name">Data Analysis</span>
-        <span class="skill-bar" data-level="33%"></span>
+       <span class="skill-bar" data-level="33%"></span>
       </span>
+
     </div>
 
   </div>
@@ -89,37 +98,227 @@
 <!-- ПРОЕКТЫ -->
 <section id="projects" class="slide slide-projects">
 
-    <div class="projects">
-      <h3>Проекты</h3>
-      <div class="project-grid">
+  <!-- Заголовок -->
+  <div class="projects-header">
+    <h2 class="projects-title">Проекты</h2>
+  </div>
 
-        <div class="project">
-          <h4>Анализ клиентской базы SaaS-продукта</h4>
-          <p>Когортный анализ, LTV, сегментация, визуализация в Power BI.</p>
-        </div>
+  <!-- Карточки проектов -->
+  <div class="projects-cards">
 
-        <div class="project">
-          <h4>Маркетинговая аналитика для e-commerce</h4>
-          <p>SQL-запросы, дашборды, рекомендации по бюджету.</p>
-        </div>
+    <!-- Проект 1 -->
+    <div class="project-card">
 
-        <div class="project">
-          <h4>Исследование поведения пользователей</h4>
-          <p>Кластеры, события, Tableau.</p>
-        </div>
+      <!-- Открытая часть -->
+      <div class="project-header-row">
+        
+        <!-- Номер и заголовок -->
+        <h3 class="project-title"><span class="project-number">1</span>
+          Анализ загрузки клиентской поддержки, выявление пиков и простоев
+        </h3>
 
-        <div class="project">
-          <h4>Прогноз продаж (ML)</h4>
-          <p>Линейная регрессия и Random Forest, MAE снижена на 15%.</p>
-        </div>
-
-        <div class="project">
-          <h4>Отчёт по возвратам</h4>
-          <p>UX-анализ, пути пользователя, рекомендации.</p>
+        <!-- Плашки инструментов -->
+        <div class="project-skills">
+          <span class="skill">Python</span>
+          <span class="skill">Временные ряды</span>
         </div>
 
       </div>
+
+      <!-- Скрытая текстовая часть -->
+      <div class="project-description">
+        
+        <p>
+          Проект посвящён анализу временных рядов — данных, упорядоченных по времени и агрегированных с равными интервалами.
+          В качестве объекта исследования выбраны обращения в техническую поддержку за первое полугодие 2025 года.
+          Цель анализа — выявить ключевые закономерности, тренды и сезонные колебания, а также построить прогноз на основе исторических данных.
+        </p>
+
+        <p>Анализ сосредоточен на метриках операционной эффективности, включая:</p>
+
+        <ul>
+          <li>количество обращений,</li>
+          <li>среднее время решения,</li>
+          <li>среднее время ответа,</li>
+          <li>долю обращений с высоким приоритетом,</li>
+          <li>распределение по каналам коммуникации.</li>
+        </ul>
+
+      </div>
+
     </div>
+
+    <!-- Проект 2 -->
+    <div class="project-card">
+
+      <!-- Открытая часть -->
+      <div class="project-header-row">
+        
+        <!-- Номер и заголовок -->
+        <h3 class="project-title"><span class="project-number">2</span>
+          Оценка тональности отзывов клиентов с использованием NLP
+        </h3>
+
+        <!-- Плашки инструментов -->
+        <div class="project-skills">
+          <span class="skill">Python</span>
+          <span class="skill">NLP</span>
+        </div>
+
+      </div>
+
+      <!-- Скрытая текстовая часть -->
+      <div class="project-description">
+        
+        <p>
+          Проект посвящён анализу временных рядов — данных, упорядоченных по времени и агрегированных с равными интервалами.
+          В качестве объекта исследования выбраны обращения в техническую поддержку за первое полугодие 2025 года.
+          Цель анализа — выявить ключевые закономерности, тренды и сезонные колебания, а также построить прогноз на основе исторических данных.
+        </p>
+
+        <p>Анализ сосредоточен на метриках операционной эффективности, включая:</p>
+
+        <ul>
+          <li>количество обращений,</li>
+          <li>среднее время решения,</li>
+          <li>среднее время ответа,</li>
+          <li>долю обращений с высоким приоритетом,</li>
+          <li>распределение по каналам коммуникации.</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- Проект 3 -->
+    <div class="project-card">
+
+      <!-- Открытая часть -->
+      <div class="project-header-row">
+        
+        <!-- Номер и заголовок -->
+        <h3 class="project-title"><span class="project-number">3</span>
+          Статистическая проверка различий между двумя вариантами посадочной страницы
+        </h3>
+
+        <!-- Плашки инструментов -->
+        <div class="project-skills">
+          <span class="skill">Python</span>
+          <span class="skill">A/B-тестирование</span>
+        </div>
+
+      </div>
+
+      <!-- Скрытая текстовая часть -->
+      <div class="project-description">
+        
+        <p>
+          Проект посвящён анализу временных рядов — данных, упорядоченных по времени и агрегированных с равными интервалами.
+          В качестве объекта исследования выбраны обращения в техническую поддержку за первое полугодие 2025 года.
+          Цель анализа — выявить ключевые закономерности, тренды и сезонные колебания, а также построить прогноз на основе исторических данных.
+        </p>
+
+        <p>Анализ сосредоточен на метриках операционной эффективности, включая:</p>
+
+        <ul>
+          <li>количество обращений,</li>
+          <li>среднее время решения,</li>
+          <li>среднее время ответа,</li>
+          <li>долю обращений с высоким приоритетом,</li>
+          <li>распределение по каналам коммуникации.</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- Проект 4 -->
+    <div class="project-card">
+
+      <!-- Открытая часть -->
+      <div class="project-header-row">
+        
+        <!-- Номер и заголовок -->
+        <h3 class="project-title"><span class="project-number">4</span>
+          Аналитика клиентского сопровождения: от базы данных до визуализации
+        </h3>
+
+        <!-- Плашки инструментов -->
+        <div class="project-skills">
+          <span class="skill">SQL</span>
+          <span class="skill">Tableau</span>
+          <span class="skill">Power BI</span>
+        </div>
+
+      </div>
+
+      <!-- Скрытая текстовая часть -->
+      <div class="project-description">
+        
+        <p>
+          Проект посвящён анализу временных рядов — данных, упорядоченных по времени и агрегированных с равными интервалами.
+          В качестве объекта исследования выбраны обращения в техническую поддержку за первое полугодие 2025 года.
+          Цель анализа — выявить ключевые закономерности, тренды и сезонные колебания, а также построить прогноз на основе исторических данных.
+        </p>
+
+        <p>Анализ сосредоточен на метриках операционной эффективности, включая:</p>
+
+        <ul>
+          <li>количество обращений,</li>
+          <li>среднее время решения,</li>
+          <li>среднее время ответа,</li>
+          <li>долю обращений с высоким приоритетом,</li>
+          <li>распределение по каналам коммуникации.</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- Проект 5 -->
+    <div class="project-card">
+
+      <!-- Открытая часть -->
+      <div class="project-header-row">
+        
+        <!-- Номер и заголовок -->
+        <h3 class="project-title"><span class="project-number">5</span>
+          Финансовое моделирование IT-проектов в Excel
+        </h3>
+
+        <!-- Плашки инструментов -->
+        <div class="project-skills">
+          <span class="skill">Excel</span>
+        </div>
+
+      </div>
+
+      <!-- Скрытая текстовая часть -->
+      <div class="project-description">
+        
+        <p>
+          Проект посвящён анализу временных рядов — данных, упорядоченных по времени и агрегированных с равными интервалами.
+          В качестве объекта исследования выбраны обращения в техническую поддержку за первое полугодие 2025 года.
+          Цель анализа — выявить ключевые закономерности, тренды и сезонные колебания, а также построить прогноз на основе исторических данных.
+        </p>
+
+        <p>Анализ сосредоточен на метриках операционной эффективности, включая:</p>
+
+        <ul>
+          <li>количество обращений,</li>
+          <li>среднее время решения,</li>
+          <li>среднее время ответа,</li>
+          <li>долю обращений с высоким приоритетом,</li>
+          <li>распределение по каналам коммуникации.</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
 </section>
 
