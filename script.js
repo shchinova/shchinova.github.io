@@ -113,3 +113,28 @@ window.addEventListener('resize', () => {
 // -----------------------------------------------------
 updateActiveLink();
 updateProgressBar();
+
+// -----------------------------------------------------
+// КАРТОЧКИ ПРОЕКТОВ: сворачивание / разворачивание
+// -----------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.project-card');
+
+  cards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      // если клик по ссылке внутри карточки — не мешаем переходу
+      const link = e.target.closest('a');
+      if (link) return;
+
+      const isExpanded = card.classList.contains('expanded');
+
+      // сворачиваем все
+      cards.forEach(c => c.classList.remove('expanded'));
+
+      // если текущая была закрыта — раскрываем
+      if (!isExpanded) {
+        card.classList.add('expanded');
+      }
+    });
+  });
+});
