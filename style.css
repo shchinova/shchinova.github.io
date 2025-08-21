@@ -1,4 +1,4 @@
-/* -----------------------------------------------------
+ /* -----------------------------------------------------
    ШРИФТЫ
 ----------------------------------------------------- */
 @font-face {
@@ -9,7 +9,7 @@
 @font-face {
   font-family: 'satoshi';
   src: url('/satoshi.otf') format('opentype');
-} /* Заголовок h1 */
+} /* Заголовки */
 
 @font-face {
   font-family: 'Doloman';
@@ -32,7 +32,6 @@ html {
 body {
   font-family: 'Doloman';
   letter-spacing: 1.5px;
-  color: #ffffff;
   overflow-x: hidden;
 }
 
@@ -80,7 +79,6 @@ body {
   justify-content: space-between;
   z-index: 1000;
   background: #121212;
-  color: #bda7ff;
   border-bottom: 6px solid #121212;
   border-radius: 0 0 8px 8px; /* Закругление нижних углов */
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.498);
@@ -127,11 +125,11 @@ body {
   font-family: 'Kill';
   font-size: 1.5rem;
   letter-spacing: 3px;
+  color: #bda7ff;
   margin: 0;
   line-height: 1;
   text-align: center;
   transition: font-size 0.3s ease, text-shadow 0.3s ease;
-  color: #bda7ff;
 }
 
 .logo-wrapper:hover .logo-paragraph {
@@ -267,7 +265,6 @@ body {
 .skills-label {
   font-weight: 600;
   font-size: 1.6rem;
-  color: #F0EBFF;
   margin-right: 0.5rem; /* Отступ от первой плашки */
 }
 
@@ -344,48 +341,197 @@ body {
    🟢 2 СЛАЙД → ПРОЕКТЫ
 ----------------------------------------------------- */
 .slide-projects {
-  background: #F0EBFF;
-  color: #121212;
+  background: #ffffff;
   z-index: 2;
-  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 5rem 6rem 5rem 6rem; /* отступы */
 }
 
-/* === ПРОЕКТЫ === */
-.projects {
-  max-width: 1000px;
-  text-align: center;
+/* -----------------------------------------------------
+   ЗАГОЛОВОК "ПРОЕКТЫ"
+----------------------------------------------------- */
+.projects-header {
+  margin-bottom: 2rem; /* нижний отступ */
 }
 
-.projects h3 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+.projects-title {
+  font-family: 'satoshi';
+  font-size: 4rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #121212;
+  /* text-shadow: 2px 2px 4px rgb(0, 0, 0); */
 }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
+/* -----------------------------------------------------
+   КАРТОЧКИ проектов — вертикальный список
+----------------------------------------------------- */
+.projects-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 100%;
 }
 
-.project {
-  background: #121212;
-  color: #F0EBFF;
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+/* Мини-карточка (свернута): одна строка, центр по вертикали */
+.project-card {
+  background-color: #f4f4f4;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 1.5rem;
+  padding: 1rem 1.5rem;      /* компактнее по вертикали */
+  color: #121212;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  overflow: hidden;
+
+  min-height: 72px;
+  display: flex;
+  flex-direction: row;        /* важно: строкой в мини */
+  align-items: center;        /* центрируем по вертикали */
+  width: 100%;
 }
 
-.project:hover {
-  transform: translateY(-5px);
+/* Строка заголовка и навыков — в ОДНУ линию */
+.project-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-wrap: nowrap;          /* не переносить на 2-ю строку */
 }
 
-.project h4 {
-  margin-bottom: 0.5rem;
+/* Заголовок: в мини — в одну строку с троеточием */
+.project-title {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #121212;
+
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.project p {
-  font-size: 0.95rem;
+/* Номер проекта как было */
+.project-number {
+  font-family: 'Satoshi';
+  color: #bda7ff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.444);
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Плашки — не сжимать, не переносить */
+.project-skills {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* Описание скрыто в мини */
+.project-description {
+  display: none;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  line-height: 1.45;
+}
+
+/* ---------------- Развёрнутая карточка ---------------- */
+.project-card.expanded {
+  min-height: auto;
+  flex-direction: column;     /* КЛЮЧ: колонкой в expanded */
+  align-items: stretch;
+}
+
+.project-card.expanded .project-header-row {
+  margin-bottom: 1rem;
+}
+
+.project-card.expanded .project-title {
+  white-space: normal;        /* можно переносить заголовок */
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.project-card.expanded .project-description {
+  display: block;             /* показываем текст ниже шапки */
+}
+
+/* -----------------------------------------------------
+   НОМЕР И ЗАГОЛОВОК
+----------------------------------------------------- */
+.project-title {
+  color: #121212;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* НОМЕР ПРОЕКТА */
+.project-number {
+  font-family: 'Satoshi';
+  color: #bda7ff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.444);
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* -----------------------------------------------------
+   ПЛАШКИ ИНСТРУМЕНТОВ
+----------------------------------------------------- */
+.project-skills {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill {
+  display: flex;
+  align-items: center;       /* вертикальное выравнивание */
+  justify-content: center;   /* горизонтальное выравнивание */
+  gap: 1rem;
+  background-color: #f4f4f4;
+  border-radius: 999px;
+  border: 1px solid #bda7ff88;
+  padding: 0.3rem 0.8rem;
+  font-size: 1.3rem;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.skill:hover {
+  transform: scale(1.1);
+}
+
+/* -----------------------------------------------------
+   ТЕКСТОВОЕ ОПИСАНИЕ
+----------------------------------------------------- */
+.project-description {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.project-description ul {
+  padding-left: 1.5rem; /* отступ слева для маркеров */
+  margin-top: 1rem;     /* отступ сверху списка */
+  margin-bottom: 1rem;  /* отступ снизу списка */
 }
 
 /* -----------------------------------------------------
@@ -395,6 +541,7 @@ body {
   background: #121212;
   z-index: 3;
   box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+  padding: 4rem 6rem 3rem 6rem; /* Отступы вверху справа внизу слева */
 }
 
 /* === КОНТАКТЫ === */
