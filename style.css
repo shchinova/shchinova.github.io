@@ -341,34 +341,33 @@ body {
    🟢 2 СЛАЙД → ПРОЕКТЫ
 ----------------------------------------------------- */
 .slide-projects {
-  background: #ffffff;
+  background: #F0EBFF;
   z-index: 2;
   box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 5rem 6rem 5rem 6rem; /* отступы */
+  padding: 5rem 6rem;
 }
 
 /* -----------------------------------------------------
-   ЗАГОЛОВОК "ПРОЕКТЫ"
+   ЗАГОЛОВОК
 ----------------------------------------------------- */
 .projects-header {
-  margin-bottom: 2rem; /* нижний отступ */
+  margin: 4rem 0;
 }
 
 .projects-title {
-  font-family: 'satoshi';
-  font-size: 4rem;
+  font-family: 'Satoshi';
+  font-size: 2rem;
   font-weight: 600;
   letter-spacing: 1.5px;
   color: #121212;
-  /* text-shadow: 2px 2px 4px rgb(0, 0, 0); */
 }
 
 /* -----------------------------------------------------
-   КАРТОЧКИ проектов — вертикальный список
+   КАРТОЧКИ ПРОЕКТОВ
 ----------------------------------------------------- */
 .projects-cards {
   display: flex;
@@ -377,83 +376,25 @@ body {
   width: 100%;
 }
 
-/* Мини-карточка (свернута): одна строка, центр по вертикали */
 .project-card {
-  background-color: #f4f4f4;
-  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+  background-color: #121212;
   border-radius: 1.5rem;
-  padding: 1rem 1.5rem;      /* компактнее по вертикали */
-  color: #121212;
+  padding: 1rem 1.5rem;
+  color: #F0EBFF;
   cursor: pointer;
   transition: all 0.25s ease;
   overflow: hidden;
-
   min-height: 72px;
   display: flex;
-  flex-direction: row;        /* важно: строкой в мини */
-  align-items: center;        /* центрируем по вертикали */
+  flex-direction: row;
+  align-items: center;
   width: 100%;
 }
 
-/* Строка заголовка и навыков — в ОДНУ линию */
-.project-header-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex: 1 1 auto;
-  min-width: 0;
-  flex-wrap: nowrap;          /* не переносить на 2-ю строку */
-}
-
-/* Заголовок: в мини — в одну строку с троеточием */
-.project-title {
-  margin: 0;
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #121212;
-
-  display: flex;
-  align-items: center;
-  gap: .6rem;
-
-  flex: 1 1 auto;
-  min-width: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Номер проекта как было */
-.project-number {
-  font-family: 'Satoshi';
-  color: #bda7ff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.444);
-  font-size: 1.8rem;
-  font-weight: 600;
-}
-
-/* Плашки — не сжимать, не переносить */
-.project-skills {
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  flex: 0 0 auto;
-  white-space: nowrap;
-}
-
-/* Описание скрыто в мини */
-.project-description {
-  display: none;
-  margin-top: 1rem;
-  font-size: 1.4rem;
-  line-height: 1.45;
-}
-
-/* ---------------- Развёрнутая карточка ---------------- */
+/* РАЗВЁРНУТАЯ ВЕРСИЯ */
 .project-card.expanded {
   min-height: auto;
-  flex-direction: column;     /* КЛЮЧ: колонкой в expanded */
+  flex-direction: column;
   align-items: stretch;
 }
 
@@ -462,76 +403,85 @@ body {
 }
 
 .project-card.expanded .project-title {
-  white-space: normal;        /* можно переносить заголовок */
+  white-space: normal;
   overflow: visible;
   text-overflow: clip;
 }
 
 .project-card.expanded .project-description {
-  display: block;             /* показываем текст ниже шапки */
+  display: block;
 }
 
 /* -----------------------------------------------------
-   НОМЕР И ЗАГОЛОВОК
+   ЭЛЕМЕНТЫ КАРТОЧКИ
 ----------------------------------------------------- */
+/* ВЕРХНЯЯ ПОЛОСА */
+.project-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+/* ЗАГОЛОВОК */
 .project-title {
-  color: #121212;
-  font-size: 1.8rem;
+  margin: 0;
+  font-size: 1.6rem;
   font-weight: 600;
-}
-
-/* НОМЕР ПРОЕКТА */
-.project-number {
-  font-family: 'Satoshi';
   color: #bda7ff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.444);
-  font-size: 1.8rem;
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* -----------------------------------------------------
-   ПЛАШКИ ИНСТРУМЕНТОВ
------------------------------------------------------ */
+/* ПЛАШКИ ИНСТРУМЕНТОВ */
 .project-skills {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 .skill {
   display: flex;
-  align-items: center;       /* вертикальное выравнивание */
-  justify-content: center;   /* горизонтальное выравнивание */
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
-  background-color: #f4f4f4;
+  background-color: #121212;
   border-radius: 999px;
   border: 1px solid #bda7ff88;
   padding: 0.3rem 0.8rem;
-  font-size: 1.3rem;
+  font-size: 1rem;
   box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
-  position: relative;
   cursor: default;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-right: 0.5rem;
-  font-size: 1rem;
 }
 
 .skill:hover {
   transform: scale(1.1);
 }
 
-/* -----------------------------------------------------
-   ТЕКСТОВОЕ ОПИСАНИЕ
------------------------------------------------------ */
+/* ТЕКСТОВОЕ ОПИСАНИЕ */
 .project-description {
+  display: none;
+  margin-top: 1rem;
   font-size: 1.5rem;
-  line-height: 1;
+  line-height: 1.45;
 }
 
 .project-description ul {
-  padding-left: 1.5rem; /* отступ слева для маркеров */
-  margin-top: 1rem;     /* отступ сверху списка */
-  margin-bottom: 1rem;  /* отступ снизу списка */
+  padding-left: 1.5rem;
+  margin: 1rem 0;
 }
 
 /* -----------------------------------------------------
