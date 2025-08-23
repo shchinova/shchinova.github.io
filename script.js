@@ -10,7 +10,6 @@ const progressBar = document.querySelector('.progress-bar');
 // ВЫСОТА ШАПКИ
 // -----------------------------------------------------
 function headerOffset() {
-  // возвращает высоту верхней панели, чтобы учитывать при скролле
   return header ? header.offsetHeight : 0;
 }
 
@@ -18,18 +17,21 @@ function headerOffset() {
 // ПОДСВЕТКА АКТИВНОГО ПУНКТА НАВИГАЦИИ
 // -----------------------------------------------------
 function updateActiveLink() {
-  // позиция скролла + поправка на шапку и 40% высоты экрана
   const y = window.scrollY + headerOffset() + window.innerHeight * 0.4;
   let currentIndex = 0;
 
   slides.forEach((slide, i) => {
-    if (y >= slide.offsetTop) currentIndex = i;
+    if (i < 2) {
+      // первые два слайда перекрываются
+      if (y >= slide.offsetTop) currentIndex = i;
+    } else {
+      // третий слайд и далее идут за предыдущим
+      const prevSlide = slides[i - 1];
+      if (y >= prevSlide.offsetTop + prevSlide.offsetHeight) currentIndex = i;
+    }
   });
 
-  // убираем активный класс у всех ссылок
   navLinks.forEach(l => l.classList.remove('active'));
-
-  // добавляем активный класс текущей
   if (navLinks[currentIndex]) navLinks[currentIndex].classList.add('active');
 }
 
@@ -39,18 +41,16 @@ function updateActiveLink() {
 function smoothGoto(targetEl) {
   document.body.classList.add('body-disable-sticky');
 
-  const extraOffset = 18; // дополнительные пиксели для точного позиционирования
+  const extraOffset = 18;
   const targetTop = targetEl.getBoundingClientRect().top + window.scrollY - headerOffset() + extraOffset;
 
   window.scrollTo({ top: targetTop, behavior: 'smooth' });
 
-  // функция завершения прокрутки
   const finish = () => {
     document.body.classList.remove('body-disable-sticky');
     updateActiveLink();
   };
 
-  // проверка поддержки события scrollend
   if ('onscrollend' in window) {
     window.addEventListener('scrollend', finish, { once: true });
   } else {
@@ -64,7 +64,6 @@ function smoothGoto(targetEl) {
       }
     }, 100);
 
-    // защита от зависания (макс. 1.2 сек)
     setTimeout(() => { clearInterval(id); finish(); }, 1200);
   }
 }
@@ -75,7 +74,7 @@ function smoothGoto(targetEl) {
 function updateProgressBar() {
   const scrollTop = window.scrollY;
   const docHeight = document.body.scrollHeight - window.innerHeight;
-  const progress  = scrollTop / docHeight; // значение от 0 до 1
+  const progress  = scrollTop / docHeight;
   progressBar.style.transform = `scaleX(${progress})`;
 }
 
@@ -122,16 +121,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   cards.forEach(card => {
     card.addEventListener('click', (e) => {
-      // если клик по ссылке внутри карточки — не мешаем переходу
       const link = e.target.closest('a');
       if (link) return;
 
       const isExpanded = card.classList.contains('expanded');
 
-      // сворачиваем все
       cards.forEach(c => c.classList.remove('expanded'));
 
-      // если текущая была закрыта — раскрываем
       if (!isExpanded) {
         card.classList.add('expanded');
       }
