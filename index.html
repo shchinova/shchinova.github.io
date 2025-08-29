@@ -103,240 +103,152 @@
     <h2 class="projects-title">Проекты</h2>
   </div>
 
-  <!-- Карточки проектов -->
-  <div class="projects-cards">
+  <!-- Контент -->
+  <div class="projects-body">
 
-    <!-- Проект 1 -->
-    <div class="project-card">
+    <!-- Левая часть -->
+    <div class="projects-left">
 
-      <!-- Открытая часть -->
-      <div class="project-header-row">
-        
-        <!-- Номер и заголовок -->
-        <h3 class="project-title"><span class="project-number">1</span>
-          Анализ загрузки клиентской поддержки, выявление пиков и простоев
-        </h3>
-
-        <!-- Плашки инструментов -->
-        <div class="project-skills">
-          <span class="skill">Python</span>
-          <span class="skill">Временные ряды</span>
-        </div>
-
+      <!-- Плашки инструментов -->
+      <div class="tools">
+        <span class="tool" data-tool="python">Python</span>
+        <span class="tool" data-tool="timeseries">Временные ряды</span>
+        <span class="tool" data-tool="nlp">NLP</span>
+        <span class="tool" data-tool="ab">A/B-тестирование</span>
+        <span class="tool" data-tool="sql">SQL</span>
+        <span class="tool" data-tool="tableau">Tableau</span>
+        <span class="tool" data-tool="powerbi">Power BI</span>
+        <span class="tool" data-tool="excel">Excel</span>
       </div>
 
-      <!-- Скрытая текстовая часть -->
-      <div class="project-description">
-        
-        <p>
-          Проект посвящён анализу временных рядов — данных, упорядоченных по времени и агрегированных с равными интервалами.
-          В качестве объекта исследования выбраны обращения в техническую поддержку за первое полугодие 2025 года.
-          Цель анализа — выявить ключевые закономерности, тренды и сезонные колебания, а также построить прогноз на основе исторических данных.
-        </p>
+      <!-- Список проектов -->
+      <ul class="projects-list">
 
-        <p>Анализ сосредоточен на метриках операционной эффективности, включая:</p>
+        <li class="project-item" 
+            data-project="1"
+            data-tools="timeseries,python"
+            data-title="Анализ загрузки клиентской поддержки, выявление пиков и простоев"
+            data-description="Проект посвящён анализу обращений в техподдержку с целью выявления закономерностей, трендов, сезонных колебаний и построению прогноза на основе данных.">
+          Анализ загрузки клиентской поддержки,<br>выявление пиков и простоев
+        </li>
 
-        <ul>
-          <li>количество обращений,</li>
-          <li>среднее время решения,</li>
-          <li>среднее время ответа,</li>
-          <li>долю обращений с высоким приоритетом,</li>
-          <li>распределение по каналам коммуникации.</li>
-        </ul>
+        <li class="project-item" 
+            data-project="2"
+            data-tools="nlp,python"
+            data-title="Оценка тональности отзывов клиентов"
+            data-description="Анализ отзывов клиентов с применением методов NLP.">
+          Оценка тональности отзывов клиентов<br>с использованием NLP
+        </li>
 
-      </div>
+        <li class="project-item"
+            data-project="3"
+            data-tools="ab,python"
+            data-title="Статистическая проверка различий"
+            data-description="A/B-тестирование посадочной страницы и проверка статистической значимости различий.">
+          Статистическая проверка различий<br>двух вариантов посадочной страницы
+        </li>
+
+        <li class="project-item"
+            data-project="4"
+            data-tools="sql,tableau,powerbi"
+            data-title="Аналитика клиентского сопровождения"
+            data-description="От базы данных до визуализации: полное построение аналитического контура.">
+          Аналитика клиентского сопровождения:<br>от базы данных до визуализации
+        </li>
+
+        <li class="project-item"
+            data-project="5"
+            data-tools="excel"
+            data-title="Финансовое моделирование IT-проектов"
+            data-description="Прогнозирование, моделирование и анализ IT-проектов в Excel.">
+          Финансовое моделирование<br>IT-проектов в Excel
+        </li>
+
+      </ul>
 
     </div>
 
-    <!-- Проект 2 -->
-    <div class="project-card">
+    <!-- Правая часть -->
+    <div class="projects-right">
 
-      <!-- Открытая часть -->
-      <div class="project-header-row">
-        
-        <!-- Номер и заголовок -->
-        <h3 class="project-title"><span class="project-number">2</span>
-          Оценка тональности отзывов клиентов с использованием NLP
-        </h3>
+      <!-- Первая строка проекта -->
+      <div class="project-header">
 
-        <!-- Плашки инструментов -->
-        <div class="project-skills">
-          <span class="skill">Python</span>
-          <span class="skill">NLP</span>
+        <!-- Название -->
+        <h3 class="project-title"></h3>
+
+        <!-- Инструменты и номер -->
+        <div class="project-tools-wrapper">
+          <div class="project-tools"></div>
+          <div class="project-number"></div>
         </div>
 
       </div>
 
-      <!-- Скрытая текстовая часть -->
-      <div class="project-description">
-        
-        <p>
-          Проект посвящён анализу временных рядов — данных, упорядоченных по времени и агрегированных с равными интервалами.
-          В качестве объекта исследования выбраны обращения в техническую поддержку за первое полугодие 2025 года.
-          Цель анализа — выявить ключевые закономерности, тренды и сезонные колебания, а также построить прогноз на основе исторических данных.
-        </p>
-
-        <p>Анализ сосредоточен на метриках операционной эффективности, включая:</p>
-
-        <ul>
-          <li>количество обращений,</li>
-          <li>среднее время решения,</li>
-          <li>среднее время ответа,</li>
-          <li>долю обращений с высоким приоритетом,</li>
-          <li>распределение по каналам коммуникации.</li>
-        </ul>
-
-      </div>
-
-    </div>
-
-    <!-- Проект 3 -->
-    <div class="project-card">
-
-      <!-- Открытая часть -->
-      <div class="project-header-row">
-        
-        <!-- Номер и заголовок -->
-        <h3 class="project-title"><span class="project-number">3</span>
-          Статистическая проверка различий между двумя вариантами посадочной страницы
-        </h3>
-
-        <!-- Плашки инструментов -->
-        <div class="project-skills">
-          <span class="skill">Python</span>
-          <span class="skill">A/B-тестирование</span>
-        </div>
-
-      </div>
-
-      <!-- Скрытая текстовая часть -->
-      <div class="project-description">
-        
-        <p>
-          Проект посвящён анализу временных рядов — данных, упорядоченных по времени и агрегированных с равными интервалами.
-          В качестве объекта исследования выбраны обращения в техническую поддержку за первое полугодие 2025 года.
-          Цель анализа — выявить ключевые закономерности, тренды и сезонные колебания, а также построить прогноз на основе исторических данных.
-        </p>
-
-        <p>Анализ сосредоточен на метриках операционной эффективности, включая:</p>
-
-        <ul>
-          <li>количество обращений,</li>
-          <li>среднее время решения,</li>
-          <li>среднее время ответа,</li>
-          <li>долю обращений с высоким приоритетом,</li>
-          <li>распределение по каналам коммуникации.</li>
-        </ul>
-
-      </div>
-
-    </div>
-
-    <!-- Проект 4 -->
-    <div class="project-card">
-
-      <!-- Открытая часть -->
-      <div class="project-header-row">
-        
-        <!-- Номер и заголовок -->
-        <h3 class="project-title"><span class="project-number">4</span>
-          Аналитика клиентского сопровождения: от базы данных до визуализации
-        </h3>
-
-        <!-- Плашки инструментов -->
-        <div class="project-skills">
-          <span class="skill">SQL</span>
-          <span class="skill">Tableau</span>
-          <span class="skill">Power BI</span>
-        </div>
-
-      </div>
-
-      <!-- Скрытая текстовая часть -->
-      <div class="project-description">
-        
-        <p>
-          Проект посвящён анализу временных рядов — данных, упорядоченных по времени и агрегированных с равными интервалами.
-          В качестве объекта исследования выбраны обращения в техническую поддержку за первое полугодие 2025 года.
-          Цель анализа — выявить ключевые закономерности, тренды и сезонные колебания, а также построить прогноз на основе исторических данных.
-        </p>
-
-        <p>Анализ сосредоточен на метриках операционной эффективности, включая:</p>
-
-        <ul>
-          <li>количество обращений,</li>
-          <li>среднее время решения,</li>
-          <li>среднее время ответа,</li>
-          <li>долю обращений с высоким приоритетом,</li>
-          <li>распределение по каналам коммуникации.</li>
-        </ul>
-
-      </div>
-
-    </div>
-
-    <!-- Проект 5 -->
-    <div class="project-card">
-
-      <!-- Открытая часть -->
-      <div class="project-header-row">
-        
-        <!-- Номер и заголовок -->
-        <h3 class="project-title"><span class="project-number">5</span>
-          Финансовое моделирование IT-проектов в Excel
-        </h3>
-
-        <!-- Плашки инструментов -->
-        <div class="project-skills">
-          <span class="skill">Excel</span>
-        </div>
-
-      </div>
-
-      <!-- Скрытая текстовая часть -->
-      <div class="project-description">
-        
-        <p>
-          Проект посвящён анализу временных рядов — данных, упорядоченных по времени и агрегированных с равными интервалами.
-          В качестве объекта исследования выбраны обращения в техническую поддержку за первое полугодие 2025 года.
-          Цель анализа — выявить ключевые закономерности, тренды и сезонные колебания, а также построить прогноз на основе исторических данных.
-        </p>
-
-        <p>Анализ сосредоточен на метриках операционной эффективности, включая:</p>
-
-        <ul>
-          <li>количество обращений,</li>
-          <li>среднее время решения,</li>
-          <li>среднее время ответа,</li>
-          <li>долю обращений с высоким приоритетом,</li>
-          <li>распределение по каналам коммуникации.</li>
-        </ul>
-
-      </div>
+      <!-- Текстовое описание проекта -->
+      <p class="project-description"></p>
 
     </div>
 
   </div>
-
-</div>
 
 </section>
 
 <!-- КОНТАКТЫ -->
 <section id="contacts" class="slide slide-contact">
 
-    <footer>
+  <!-- Заголовок -->
+  <h2 class="contacts-title">СВЯЗАТЬСЯ СО МНОЙ</h2>
 
-      <div class="contacts">
-        <a href="mailto:example@email.com">example@email.com</a>
-        <a href="https://t.me/username" target="_blank">Telegram</a>
-        <a href="https://www.linkedin.com/in/username" target="_blank">LinkedIn</a>
-        <a href="https://github.com/username" target="_blank">GitHub</a>
+  <!-- Mail -->
+  <span class="contacts-email" data-email="SHCHINOVA18@GMAIL.COM">
+    SHCHINOVA18@GMAIL.COM
+  </span>
+
+
+  <!-- Другие контакты -->
+  <div class="other-contacts">
+   
+    <!-- Telegram -->
+    <div class="tg">
+
+      <div class="tg-qr" data-url="https://t.me/shchinova" role="link" tabindex="0">
+        <img src="image_QR_tg.png" alt="Telegram: @shchinova">
+      </div>
+       
+      <img src="image_paw_animation.gif" 
+        alt="Перейти по QR-коду" 
+        class="paw">
+
+      <span class="contacts-telegram">Написать в Telegram</span>
+
+    </div>
+
+    <!-- Плашки -->
+    <div class="contacts-icons">
+
+      <!-- Плашка GitHub -->
+      <div class="contact-icon" data-tooltip="Перейти в GitHub">
+        <a href="https://github.com/shchinova" target="_blank">
+          <img src="icon_github.png" alt="GitHub">
+        </a>
       </div>
 
-      <p>&copy; 2025 Shchinova</p>
+      <!-- Плашка Tableau -->
+      <div class="contact-icon" data-tooltip="Перейти в Tableau">
+        <a href="https://public.tableau.com/app/profile/elena.shchinova/vizzes" target="_blank">
+          <img src="icon_tableau.png" alt="Tableau">
+        </a>
+      </div>
 
-    </footer>
+    </div>
+
+  </div>
+
+  <!-- Футер -->
+  <footer class="contacts-footer">
+    <p>&copy; 2025 by Elena Shchinova</p>
+  </footer>
 
 </section>
 
