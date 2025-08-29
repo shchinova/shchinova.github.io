@@ -13,26 +13,28 @@ function headerOffset() {
   return header ? header.offsetHeight : 0;
 }
 
-// -----------------------------------------------------
+/// -----------------------------------------------------
 // ПОДСВЕТКА АКТИВНОГО ПУНКТА НАВИГАЦИИ
 // -----------------------------------------------------
 function updateActiveLink() {
+  // y — текущая позиция скролла с учётом верхней панели и небольшой поправки для середины экрана
   const y = window.scrollY + headerOffset() + window.innerHeight * 0.4;
   let currentIndex = 0;
 
   slides.forEach((slide, i) => {
-    if (i < 2) {
-      // первые два слайда перекрываются
-      if (y >= slide.offsetTop) currentIndex = i;
-    } else {
-      // третий слайд и далее идут за предыдущим
-      const prevSlide = slides[i - 1];
-      if (y >= prevSlide.offsetTop + prevSlide.offsetHeight) currentIndex = i;
+    // если верх слайда находится выше текущей позиции y, считаем его активным
+    if (y >= slide.offsetTop) {
+      currentIndex = i;
     }
   });
 
-  navLinks.forEach(l => l.classList.remove('active'));
-  if (navLinks[currentIndex]) navLinks[currentIndex].classList.add('active');
+  // снимаем класс active со всех ссылок
+  navLinks.forEach(link => link.classList.remove('active'));
+
+  // добавляем active только для текущей ссылки
+  if (navLinks[currentIndex]) {
+    navLinks[currentIndex].classList.add('active');
+  }
 }
 
 // -----------------------------------------------------
@@ -114,23 +116,211 @@ updateActiveLink();
 updateProgressBar();
 
 // -----------------------------------------------------
-// КАРТОЧКИ ПРОЕКТОВ: сворачивание / разворачивание
+// ЭЛЕМЕНТЫ
 // -----------------------------------------------------
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.project-card');
+const projectItems = document.querySelectorAll('.project-item');
+const projectTitle = document.querySelector('.project-title');
+const projectDesc = document.querySelector('.project-description');
+const projectTools = document.querySelector('.project-tools');
+const projectNumber = document.querySelector('.project-number');
+const allTools = document.querySelectorAll('.tool');
 
-  cards.forEach(card => {
-    card.addEventListener('click', (e) => {
-      const link = e.target.closest('a');
-      if (link) return;
+let activeProject = null;   // текущий активный проект
+let selectedTool = null;    // выбранный инструмент (tool.choice)
 
-      const isExpanded = card.classList.contains('expanded');
+// -----------------------------------------------------
+// УТИЛИТЫ
+// -----------------------------------------------------
+function parseToolsList(str) {
+  if (!str) return [];
+  return str.split(',').map(s => s.trim()).filter(Boolean);
+}
 
-      cards.forEach(c => c.classList.remove('expanded'));
+// -----------------------------------------------------
+// ВИЗУАЛИЗАЦИЯ ПРОЕКТА
+// -----------------------------------------------------
+function showProject(item) {
+  projectTitle.textContent = item.dataset.title || '';
+  projectDesc.textContent = item.dataset.description || '';
+  projectNumber.textContent = (item.dataset.project || '').toString().padStart(2, '0');
 
-      if (!isExpanded) {
-        card.classList.add('expanded');
+  projectTools.innerHTML = '';
+  const toolsOfProject = parseToolsList(item.dataset.tools);
+
+  toolsOfProject.forEach(t => {
+    const span = document.createElement('span');
+    span.classList.add('tool', 'active');
+    const leftTool = document.querySelector(`.tool[data-tool="${t}"]`);
+    span.textContent = leftTool ? leftTool.textContent : t;
+    projectTools.appendChild(span);
+  });
+
+  // сброс активных у всех инструментов
+  allTools.forEach(tool => tool.classList.remove('active'));
+
+  // подсветка инструментов активного проекта
+  toolsOfProject.forEach(t => {
+    const el = document.querySelector(`.tool[data-tool="${t}"]`);
+    if (el) el.classList.add('active');
+  });
+
+  // если инструмент выбран – он остаётся выделенным
+  if (selectedTool) {
+    selectedTool.classList.add('choice');
+  }
+}
+
+// -----------------------------------------------------
+// УСТАНОВКА АКТИВНОГО ПРОЕКТА
+// -----------------------------------------------------
+function setActiveProject(item) {
+  if (activeProject) activeProject.classList.remove('active');
+  activeProject = item;
+  item.classList.add('active');
+  showProject(item);
+
+  // сброс подсветок остальных
+  projectItems.forEach(p => {
+    if (p !== item) {
+      p.classList.remove('active');
+      p.classList.remove('highlight');
+    }
+  });
+
+  // если выбранный инструмент не входит в проект – сброс выбора
+  if (selectedTool) {
+    const toolName = selectedTool.dataset.tool;
+    const tools = parseToolsList(item.dataset.tools);
+    if (!tools.includes(toolName)) {
+      clearToolSelection();
+    }
+  }
+}
+
+// -----------------------------------------------------
+// ПОДСВЕТКА
+// -----------------------------------------------------
+function highlightProjects(toolName) {
+  clearHighlights();
+  let related = [];
+  projectItems.forEach(p => {
+    const tools = parseToolsList(p.dataset.tools);
+    if (tools.includes(toolName)) {
+      if (!p.classList.contains('active')) {
+        p.classList.add('highlight');
       }
-    });
+      related.push(p);
+    }
+  });
+  return related;
+}
+
+function clearHighlights() {
+  projectItems.forEach(p => p.classList.remove('highlight'));
+}
+
+function clearToolSelection() {
+  if (selectedTool) {
+    selectedTool.classList.remove('choice');
+    selectedTool = null;
+  }
+  clearHighlights();
+}
+
+// -----------------------------------------------------
+// ОБРАБОТЧИКИ ИНСТРУМЕНТОВ
+// -----------------------------------------------------
+allTools.forEach(tool => {
+  const toolName = tool.dataset.tool;
+
+  tool.addEventListener('mouseenter', () => {
+    // всегда подсвечиваем проекты по наведённому инструменту
+    highlightProjects(toolName);
+  });
+
+  tool.addEventListener('mouseleave', () => {
+    if (selectedTool) {
+      // если есть выбранный инструмент → восстанавливаем его подсветку
+      highlightProjects(selectedTool.dataset.tool);
+    } else {
+      // если выбора нет → снимаем подсветку
+      clearHighlights();
+    }
+  });
+
+  tool.addEventListener('click', () => {
+    // если уже выбран этот инструмент → снять выбор
+    if (selectedTool === tool) {
+      tool.classList.remove('choice');
+      selectedTool = null;
+
+      // если активный проект использует инструмент → оставить .active
+      if (activeProject) {
+        const tools = parseToolsList(activeProject.dataset.tools);
+        if (tools.includes(toolName)) {
+          tool.classList.add('active');
+        }
+      }
+      clearHighlights();
+      return;
+    }
+
+    // выбор другого инструмента
+    clearToolSelection();
+    selectedTool = tool;
+    tool.classList.add('choice');
+
+    const related = highlightProjects(toolName);
+
+    if (related.length === 1) {
+      setActiveProject(related[0]);
+    }
   });
 });
+
+// -----------------------------------------------------
+// ОБРАБОТЧИКИ ПРОЕКТОВ
+// -----------------------------------------------------
+projectItems.forEach(item => {
+  item.addEventListener('click', () => {
+    setActiveProject(item);
+  });
+});
+
+// -----------------------------------------------------
+// ИНИЦИАЛИЗАЦИЯ
+// -----------------------------------------------------
+if (projectItems.length > 0) {
+  setActiveProject(projectItems[0]);
+}
+
+// -----------------------------------------------------
+// КОПИРОВАНИЕ ПОЧТЫ В БУФЕР
+// -----------------------------------------------------
+const emailEl = document.querySelector(".contacts-email");
+
+if (emailEl) {
+  emailEl.addEventListener("click", () => {
+    const rawEmail = emailEl.dataset.email || emailEl.textContent.trim();
+    const email = rawEmail.toLowerCase(); // копируем строчными
+
+    navigator.clipboard.writeText(email).then(() => {
+      emailEl.classList.add("copied");
+      setTimeout(() => emailEl.classList.remove("copied"), 2000);
+    });
+  });
+}
+
+// -----------------------------------------------------
+// QR-КОД → ОТКРЫТЬ TELEGRAM
+// -----------------------------------------------------
+const qrEl = document.querySelector(".tg-qr");
+
+if (qrEl) {
+  qrEl.addEventListener("click", () => {
+    const url = qrEl.dataset.url;
+    if (url) {
+      window.open(url, "_blank");
+    }
+  });
+}
