@@ -3,22 +3,22 @@
 ----------------------------------------------------- */
 @font-face {
   font-family: 'Kill';
-  src: url('/kill.otf') format('opentype');
+  src: url('/font_kill.otf') format('opentype');
 } /* Логотип */
 
 @font-face {
-  font-family: 'satoshi';
-  src: url('/satoshi.otf') format('opentype');
+  font-family: 'Satoshi';
+  src: url('/font_satoshi.otf') format('opentype');
 } /* Заголовки */
 
 @font-face {
   font-family: 'Doloman';
-  src: url('/Doloman.otf') format('opentype');
+  src: url('/font_doloman.otf') format('opentype');
 } /* Основной текст */
 
 @font-face {
   font-family: 'Vasek';
-  src: url('/Vasek.ttf') format('truetype');
+  src: url('/font_vasek.ttf') format('truetype');
 } /* Написать в Telegram */
 
 
@@ -213,7 +213,7 @@ body {
 
 /* ОСНОВНОЙ ЗАГОЛОВОК */
 .intro-portfolio {
-  font-family: 'satoshi';
+  font-family: 'Satoshi';
   font-size: 6.1rem;
   font-weight: 600;
   letter-spacing: 1.5px;
