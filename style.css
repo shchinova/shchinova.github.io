@@ -16,6 +16,12 @@
   src: url('/Doloman.otf') format('opentype');
 } /* Основной текст */
 
+@font-face {
+  font-family: 'Vasek';
+  src: url('/Vasek.ttf') format('truetype');
+} /* Написать в Telegram */
+
+
 /* -----------------------------------------------------
    БАЗОВЫЕ НАСТРОЙКИ
 ----------------------------------------------------- */
@@ -279,7 +285,6 @@ body {
   font-size: 1.3rem;
   box-shadow: 4px 4px 8px rgba(0,0,0,0.7);
   position: relative;
-  cursor: default;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-right: 0.5rem;
 }
@@ -341,147 +346,253 @@ body {
    🟢 2 СЛАЙД → ПРОЕКТЫ
 ----------------------------------------------------- */
 .slide-projects {
-  background: #F0EBFF;
+  background: #121212;
+  color: #F0EBFF;
   z-index: 2;
   box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 5rem 6rem;
+  padding: 5rem 0 5rem 6rem; /* верх правый низ левый */
+  height: 100vh;
 }
 
 /* -----------------------------------------------------
    ЗАГОЛОВОК
 ----------------------------------------------------- */
 .projects-header {
-  margin: 4rem 0;
+  margin-top: 2rem;
 }
 
 .projects-title {
   font-family: 'Satoshi';
   font-size: 2rem;
   font-weight: 600;
-  letter-spacing: 1.5px;
-  color: #121212;
+  color: #bda7ff;
 }
 
 /* -----------------------------------------------------
-   КАРТОЧКИ ПРОЕКТОВ
+   КОНТЕНТ
 ----------------------------------------------------- */
-.projects-cards {
+.projects-body {
   display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-  width: 100%;
+  align-items: flex-start;
 }
 
-.project-card {
-  background-color: #121212;
-  border-radius: 1.5rem;
-  padding: 1rem 1.5rem;
-  color: #F0EBFF;
+/* -----------------------------------------------------
+   ЛЕВАЯ ЧАСТЬ
+----------------------------------------------------- */
+.projects-left {
+  flex: 0 0 410px;
+}
+
+/* -----------------------------------------------------
+   ПЛАШКИ ИНСТРУМЕНТОВ
+----------------------------------------------------- */
+.tools {
+  margin-top: 1.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  width: 350px;                
+  justify-content: flex-start;
+  margin-bottom: 2.5rem;
+}
+
+/* НЕАКТИВНЫЙ ИНСТРУМЕНТ */
+.tool {
+  border: 0.2px solid #808080;
+  background: #121212;
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  font-size: 1rem;
+  color: #808080;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+}
+
+/* АКТИВНЫЙ ИНСТРУМЕНТ */
+.tool.active {
+  border: 1px solid #bda7ff;
+  color: #F0EBFF;
+}
+
+/* ВЫБРАННЫЙ ИНСТРУМЕНТ */
+.tool.choice {
+  background: #bda7ff;
+  border: 1px solid #bda7ff;
+  color: #121212;
+  font-weight: 600;
+}
+
+/* ПЛАШКА ПРИ НАВЕДЕНИИ */
+.tool:hover {
+  transform: scale(1.1);
+  box-shadow: 6px 6px 12px rgba(0,0,0,0.8);
+  border: 1px solid #bda7ff;
+}
+
+/* ШИРИНА ПЛАШКИ NLP */
+.tool[data-tool="nlp"] {
+  width: 79.5px;       
+  text-align: center; 
+  flex: 0 0 auto;    
+}
+
+/* -----------------------------------------------------
+   СПИСОК ПРОЕКТОВ
+----------------------------------------------------- */
+.projects-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; 
+}
+
+/* НЕАКТИВНЫЙ ПРОЕКТ */
+.project-item {
+  background: #121212;
+  border-radius: 8px;
+  padding: 1.1rem 1.4rem; /* верт, гор отступы */
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #808080;
   transition: all 0.25s ease;
-  overflow: hidden;
-  min-height: 72px;
+}
+
+/* ПРОЕКТ ПРИ НАВЕДЕНИИ */
+.project-item:hover {
+  color: #F0EBFF;
+  background: #171717;
+  border: 1px solid #191919;
+  transform: scale(1.03);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* АКТИВНЫЙ ПРОЕКТ */
+.project-item.active {
+  color: #F0EBFF;
+  background: #171717;
+  font-size: 1.3rem;
+  border: 1px solid #191919;
+  border-left: 2px solid #bda7ff;
+  transform: scale(1.03);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* ПОИСК ПРОЕКТОВ ПО ИНСТРУМЕНТУ */
+.project-item.highlight {
+  color: #F0EBFF;
+  background: #171717;
+  font-size: 1.3rem;
+  border: 1px solid #191919;
+  border-left: 2px solid #bda7ff;
+  transform: scale(1.03);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* -----------------------------------------------------
+   ПРАВАЯ ЧАСТЬ
+----------------------------------------------------- */
+.projects-right {
+  width: calc(100vw - 410px - 6rem - 5rem - var(--scrollbar-width, 17px));
+  flex: 0 0 auto;
+  margin-left: 5rem;
+  padding-left: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+/* -----------------------------------------------------
+   СТРОКА С ЗАГОЛОВКОМ И ИНСТРУМЕНТАМИ
+----------------------------------------------------- */
+.project-header {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  width: 100%;
-}
-
-/* РАЗВЁРНУТАЯ ВЕРСИЯ */
-.project-card.expanded {
-  min-height: auto;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-.project-card.expanded .project-header-row {
-  margin-bottom: 1rem;
-}
-
-.project-card.expanded .project-title {
-  white-space: normal;
-  overflow: visible;
-  text-overflow: clip;
-}
-
-.project-card.expanded .project-description {
-  display: block;
-}
-
-/* -----------------------------------------------------
-   ЭЛЕМЕНТЫ КАРТОЧКИ
------------------------------------------------------ */
-/* ВЕРХНЯЯ ПОЛОСА */
-.project-header-row {
-  display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-  flex: 1 1 auto;
-  min-width: 0;
+  position: relative;
   flex-wrap: nowrap;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
 }
 
 /* ЗАГОЛОВОК */
 .project-title {
-  margin: 0;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #bda7ff;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  flex: 1 1 auto;
-  min-width: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* ПЛАШКИ ИНСТРУМЕНТОВ */
-.project-skills {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex: 0 0 auto;
-  white-space: nowrap;
-}
-
-.skill {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  background-color: #121212;
-  border-radius: 999px;
-  border: 1px solid #bda7ff88;
-  padding: 0.3rem 0.8rem;
-  font-size: 1rem;
-  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
-  cursor: default;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-right: 0.5rem;
-}
-
-.skill:hover {
-  transform: scale(1.1);
-}
-
-/* ТЕКСТОВОЕ ОПИСАНИЕ */
-.project-description {
-  display: none;
-  margin-top: 1rem;
+  margin-top: 1.8rem;
   font-size: 1.5rem;
-  line-height: 1.45;
+  color: #F0EBFF;
+  flex: 6 1 70%;
+  min-width: 0;
+  word-break: break-word;
+  text-align: left;
+  box-sizing: border-box;
 }
 
-.project-description ul {
-  padding-left: 1.5rem;
-  margin: 1rem 0;
+/* -----------------------------------------------------
+   ИНСТРУМЕНТЫ И НОМЕР
+----------------------------------------------------- */
+.project-tools-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex: 4 0 30%;
+  position: relative;
+  box-sizing: border-box;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ИНСТРУМЕНТЫ */
+.project-tools {
+  margin-top: 1.8rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  z-index: 2;
+  box-sizing: border-box;
+  padding-right: 6rem;
+}
+
+.project-tools .tool {
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* НОМЕР */
+.project-number {
+  font-family: 'Satoshi';
+  position: absolute;
+  top: -1rem;
+  right: 0;
+  font-size: 8rem;
+  color: #262626;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* -----------------------------------------------------
+   ОПИСАНИЕ ПРОЕКТА
+----------------------------------------------------- */
+.project-description {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #F0EBFF;
+  margin-top: 1rem;
+  box-sizing: border-box;
+  padding-right: 6rem;
 }
 
 /* -----------------------------------------------------
@@ -489,46 +600,224 @@ body {
 ----------------------------------------------------- */
 .slide-contact {
   background: #121212;
+  color: #F0EBFF;
   z-index: 3;
   box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
-  padding: 4rem 6rem 3rem 6rem; /* Отступы вверху справа внизу слева */
-}
-
-/* === КОНТАКТЫ === */
-footer {
+  padding: 5rem 6rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 5rem);
+  box-sizing: border-box;
   text-align: center;
 }
 
-.contacts {
-  margin-bottom: 1rem;
-}
-
-.contacts a {
-  display: inline-block;
-  margin: 0.5rem;
-  text-decoration: none;
-  font-weight: 500;
-  color: inherit;
-}
-
-footer p {
-  font-size: 0.9rem;
+/* ЗАГОЛОВОК */
+.contacts-title {
+  font-family: 'Satoshi';
+  font-size: 3.5rem;
+  font-weight: 600;
   color: #F0EBFF;
+  margin-top: 15rem;
+  margin-bottom: 2rem;
 }
 
 /* -----------------------------------------------------
-   АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ
+   ПОЧТА
 ----------------------------------------------------- */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
-  }
+.contacts-email {
+  position: relative;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 11rem;
+  color: #F0EBFF;
+  cursor: pointer;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
 
-  header h2 {
-    font-size: 1.2rem;
-  }
+.contacts-email:hover {
+  color: #bda7ff;
+  font-size: 1.8rem;
+}
 
-  .logo-paragraph {
-    font-size: 2rem;
-  }
+/* ПОДСКАЗКА СКОПИРОВАТЬ */
+.contacts-email::after {
+  content: "Скопировать";
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  color: #757575;
+  font-size: 1rem;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease, transform 0.3s ease, content 0.3s ease;
+  pointer-events: none;
+}
+
+.contacts-email:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ПОДСКАЗКА СКОПИРОВАНО */
+.contacts-email.copied::after {
+  content: "Скопировано";
+  color: #757575;
+  opacity: 1;
+}
+
+/* -----------------------------
+   ДРУГИЕ КОНТАКТЫ
+----------------------------- */
+.other-contacts {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 17.35rem; /* расстояние между tg и иконками */
+  width: 100%;
+  text-align: left;
+}
+
+/* -----------------------------
+   ЧАСТЬ С ТЕЛЕГРАМОМ
+----------------------------- */
+.tg {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.tg img {
+  height: 100px;
+}
+
+/* -----------------------------
+   QR-КОД
+----------------------------- */
+.tg-qr {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* СТИЛЬ КАРТИНКИ */
+.tg-qr img {
+  display: block;
+  height: 100px;
+}
+
+.tg-qr:hover {
+  transform: scale(1.05);
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.7);
+  transition: all 0.25s ease;
+}
+
+/* ПОДСКАЗКА */
+.tg-qr::after {
+  content: "Перейти в Telegram";
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  color: #757575;
+  font-size: 1rem;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.tg-qr:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* -----------------------------
+   ЛАПКА
+----------------------------- */
+.tg img.paw {
+  height: 70px;
+}
+
+/* -----------------------------
+   ТЕКСТ НАПИСАТЬ В ТЕЛЕГРАМ
+----------------------------- */
+.contacts-telegram {
+  font-family: 'Vasek';
+  font-size: 2.2rem;
+  color: #808080;
+  user-select: none;
+  transition: color 0.3s ease;
+  padding-top: 2rem;
+}
+
+.contacts-telegram:hover {
+  color: #bda7ff;
+}
+
+/* -----------------------------
+   ИКОНКИ (GitHub, Tableau)
+----------------------------- */
+.contacts-icons {
+  display: flex;
+  gap: 0.8rem; /* расстояние между плашками */
+  padding-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ИКОНКА */
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.7);
+  transition: all 0.25s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.contact-icon:hover {
+  transform: scale(1.1);
+}
+
+/* ПОДСКАЗКА */
+.contact-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  background: transparent;
+  color: #757575;
+  font-size: 1rem;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.contact-icon:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* СТИЛЬ КАРТИНКИ */
+.contact-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+/* -----------------------------
+   ФУТЕР
+----------------------------- */
+.contacts-footer {
+  font-size: 0.9rem;
+  color: #808080;
 }
