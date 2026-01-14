@@ -370,6 +370,7 @@ body {
   font-size: 2rem;
   font-weight: 600;
   color: #bda7ff;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
 /* -----------------------------------------------------
@@ -619,20 +620,16 @@ body {
   font-size: 3.5rem;
   font-weight: 600;
   color: #F0EBFF;
-  margin-top: 15rem;
-  margin-bottom: 2rem;
+  margin-top: 12rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
 /* Текст "Напишите мне" */
 .contact-text {
-  font-size: 1.6rem;
-  font-weight: 300;
-  max-width: 1350px;
-  line-height: 1.5;
-  color: #BDA7FF;
-  margin: 0 auto 2rem;
-  text-align: center;
-  opacity: 0.9;
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  color: #757575;
 }
 
 /* -----------------------------------------------------
@@ -688,13 +685,13 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 19.35rem; /* расстояние между tg и иконками */
+  gap: 23.7rem; /* расстояние между tg и иконками */
   width: 100%;
   text-align: left;
 }
 
 /* -----------------------------
-   ЧАСТЬ С ТЕЛЕГРАМОМ
+   ЧАСТЬ С ТГ
 ----------------------------- */
 .tg {
   display: flex;
@@ -803,7 +800,7 @@ body {
 .contact-icon::after {
   content: attr(data-tooltip);
   position: absolute;
-  bottom: 5rem;
+  bottom: -1.5rem;
   left: 50%;
   transform: translateX(-50%) translateY(5px);
   background: transparent;
