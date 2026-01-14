@@ -623,6 +623,18 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Текст "Напишите мне" */
+.contact-text {
+  font-size: 1.6rem;
+  font-weight: 300;
+  max-width: 1350px;
+  line-height: 1.5;
+  color: #BDA7FF;
+  margin: 0 auto 2rem;
+  text-align: center;
+  opacity: 0.9;
+}
+
 /* -----------------------------------------------------
    ПОЧТА
 ----------------------------------------------------- */
