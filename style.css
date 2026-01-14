@@ -676,7 +676,7 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 17.35rem; /* расстояние между tg и иконками */
+  gap: 19.35rem; /* расстояние между tg и иконками */
   width: 100%;
   text-align: left;
 }
