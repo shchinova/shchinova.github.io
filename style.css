@@ -61,17 +61,7 @@ body {
 }
 
 /* -----------------------------------------------------
-   🟢 1 СЛАЙД → ОБО МНЕ
------------------------------------------------------ */
-.slide-intro {
-  background-color: #121212;
-  color: #f0ebff;
-  min-height: 100vh;
-  z-index: 1;
-}
-
-/* -----------------------------------------------------
-   ВЕРХНЯЯ ПАНЕЛЬ
+   🟢 ВЕРХНЯЯ ПАНЕЛЬ
 ----------------------------------------------------- */
 .logo-bar {
   position: fixed;
@@ -143,26 +133,6 @@ body {
   text-shadow: 0 0 6px rgba(189, 167, 255, 0.6);
 }
 
-/* ВСПЛЫВАЮЩАЯ ПОДСКАЗКА
-.logo-wrapper::after {
-  content: "Shchinova Elena";
-  position: absolute;
-  bottom: -1.2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #757575;
-  font-size: 0.8rem;
-  opacity: 0;
-  white-space: nowrap;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-}
-
-.logo-wrapper:hover::after {
-  opacity: 1;
-  transform: translateX(-50%) translateY(-2px);
-} */
-
 /* -----------------------------------------------------
    НАВИГАЦИЯ
 ----------------------------------------------------- */
@@ -197,18 +167,25 @@ body {
 }
 
 /* -----------------------------------------------------
-   ЗАГОЛОВКИ
+   🟢 1 СЛАЙД → ОБО МНЕ
 ----------------------------------------------------- */
-.intro-wrapper {
-  display: grid;
-  grid-template-rows: 1fr auto;      
+.slide-intro {
+  background-color: #121212;
+  color: #f0ebff;
   min-height: 100vh;
-  text-align: left; 
-  padding: 4rem 6rem 3rem 6rem; /* Отступы вверху справа внизу слева */ 
+  z-index: 1;
+  padding: 5rem 0 5rem 6rem; /* верх правый низ левый */
 }
 
-.intro-header {
-  align-self: center;
+/* -----------------------------------------------------
+   БЛОК ЗАГОЛОВКОВ
+----------------------------------------------------- */
+.intro-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* вертикальное центрирование содержимого */
+  text-align: left;
+  padding: 12rem 0rem 12rem 0rem; /* top right bottom left */
 }
 
 /* ОСНОВНОЙ ЗАГОЛОВОК */
@@ -217,96 +194,107 @@ body {
   font-size: 6.1rem;
   font-weight: 600;
   letter-spacing: 1.5px;
-  margin-bottom: 1rem; /* Отступ снизу */
+  margin-bottom: 1rem; 
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
 /* ИМЯ + ДОЛЖНОСТЬ */
 .intro-name {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 500;
   letter-spacing: 0.75px;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
+/* ГОД */
+.intro-year {
+  color: #757575;
+}
+
+/* КРАТКОЕ ОПИСАНИЕ */
+.intro-description {
+  color: #757575;
+  font-size: 1.8rem;
+}
+
 /* -----------------------------------------------------
    БЛОК О СЕБЕ
 ----------------------------------------------------- */
+.intro-about-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem; /* Расстояние между чертой и текстом */
+}
+
 /* ЧЕРТА-РАЗДЕЛИТЕЛЬ */
 .intro-separator {
   border: none;
   border-top: 1px solid #757575;
   width: 200px; /* Длина линии */
-  margin: 0;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
 /* ТЕКСТ О СЕБЕ */
 .intro-about {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 300;
-  max-width: 1350px; /* Ширина текста */
   line-height: 1.5;
-}
-
-.intro-about-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1.8rem; /* Расстояние между чертой и текстом */
-  margin: 2rem 0; /* Отступ сверху и снизу */
+  margin-bottom: 4rem; 
 }
 
 /* -----------------------------------------------------
-   НАВЫКИ
+   ИНСТРУМЕНТЫ
 ----------------------------------------------------- */
 .intro-footer {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
   flex-wrap: wrap;
-  margin-bottom: 2rem; /* Отступ от нижнего края*/
 }
 
-/* УКАЗАТЕЛЬ "Skills" */
-.skills-label {
+/* УКАЗАТЕЛЬ "Tools" */
+.tools-label {
+  font-size: 1.8rem;
   font-weight: 600;
-  font-size: 1.6rem;
-  margin-right: 0.5rem; /* Отступ от первой плашки */
+  letter-spacing: 0.75px;
+  margin-right: 1.2rem; /* Отступ от первой плашки */
+  color: #757575;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
-/* НАВЫКИ */
-.skill-badge {
+/* ИНСТРУМЕНТЫ */
+.tool-badge {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
   background-color: #121212;
   border-radius: 999px;
   padding: 0.3rem 0.8rem;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   box-shadow: 4px 4px 8px rgba(0,0,0,0.7);
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
+  backface-visibility: hidden;
 }
 
-.skill-badge:hover {
+.tool-badge:hover {
   transform: scale(1.1);
 }
 
 /* ПРОГРЕСС-БАР */
-.skill-bar {
+.tool-bar {
   margin-left: auto;
   width: 74px;
   height: 9.5px;
   border-radius: 4px;
   background: #121212;
-  border: 1px solid #bda7ffa0;
+  border: 1.1px solid #bda7ffa0;
   position: relative;
   overflow: hidden;
 }
 
 /* ЗАПОЛНЕНИЕ УРОВНЯ */
-.skill-bar::after {
+.tool-bar::after {
   content: "";
   position: absolute;
   top: 0;
@@ -314,22 +302,22 @@ body {
   height: 100%;
   width: 0;
   background: #bda7ff8d;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
-.skill-bar[data-level="33%"]::after { width: 33%; }
-.skill-bar[data-level="66%"]::after { width: 66%; }
-.skill-bar[data-level="100%"]::after { width: 100%; }
+.tool-bar[data-level="33%"]::after { width: 33%; }
+.tool-bar[data-level="66%"]::after { width: 66%; }
+.tool-bar[data-level="100%"]::after { width: 100%; }
 
 /* ВСПЛЫВАЮЩАЯ ПОДСКАЗКА */
-.skill-badge::after {
+.tool-badge::after {
   content: attr(data-level-text);
   position: absolute;
-  bottom: -1.5rem;
+  bottom: -2rem;
   left: 50%;
   transform: translateX(-50%);
   color: #757575;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -337,7 +325,7 @@ body {
   white-space: nowrap;
 }
 
-.skill-badge:hover::after {
+.tool-badge:hover::after {
   opacity: 1;
   transform: translateX(-50%) translateY(-2px);
 }
@@ -407,7 +395,7 @@ body {
   background: #121212;
   border-radius: 999px;
   padding: 0.4rem 1rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #808080;
   box-shadow: 2px 2px 4px rgba(0,0,0,0.7);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -530,6 +518,7 @@ body {
 .project-title {
   margin-top: 1.8rem;
   font-size: 1.5rem;
+  font-weight: 500;
   color: #F0EBFF;
   flex: 6 1 70%;
   min-width: 0;
@@ -604,14 +593,14 @@ body {
   color: #F0EBFF;
   z-index: 3;
   box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
-  padding: 5rem 6rem;
+  padding: 5rem 6rem; /* Отступ: 5rem сверху/снизу, 6rem слева/справа */
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  height: calc(100vh - 5rem);
+  height: calc(100vh - 5rem); /* Высота слайда с учётом фиксированной панели */
   box-sizing: border-box;
-  text-align: center;
+  text-align: center; /* Центрирование текста горизонтально */
 }
 
 /* ЗАГОЛОВОК */
@@ -620,15 +609,15 @@ body {
   font-size: 3.5rem;
   font-weight: 600;
   color: #F0EBFF;
-  margin-top: 12rem;
-  margin-bottom: 1.5rem;
+  margin-top: 10rem; /* Отступ сверху */
+  margin-bottom: 1.5rem; /* Отступ снизу */
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
 /* Текст "Напишите мне" */
 .contact-text {
-  font-size: 1.3rem;
-  margin-bottom: 3rem;
+  font-size: 1.5rem;
+  margin-bottom: 3rem; /* Отступ снизу */
   color: #757575;
 }
 
@@ -639,7 +628,7 @@ body {
   position: relative;
   font-size: 1.6rem;
   letter-spacing: 0.2rem;
-  margin-bottom: 11rem;
+  margin-bottom: 14rem; /* Отступ снизу */
   color: #F0EBFF;
   cursor: pointer;
   transition: color 0.3s ease, font-size 0.3s ease;
@@ -678,36 +667,20 @@ body {
 }
 
 /* -----------------------------
-   ДРУГИЕ КОНТАКТЫ
------------------------------ */
-.other-contacts {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 23.7rem; /* расстояние между tg и иконками */
-  width: 100%;
-  text-align: left;
-}
-
-/* -----------------------------
-   ЧАСТЬ С ТГ
+   ТГ
 ----------------------------- */
 .tg {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.tg img {
-  height: 100px;
+  display: flex; /* элементы в строку */
+  gap: 1rem; /* расстояние между элементами */
+  align-items: center; /* вертикальное центрирование элементов */
+  justify-content: flex-start; /* выравнивание по левому краю */
+  width: 100%;
 }
 
 /* -----------------------------
-   QR-КОД
+   QR-код
 ----------------------------- */
 .tg-qr {
-  display: inline-block;
   position: relative;
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -716,7 +689,7 @@ body {
 /* СТИЛЬ КАРТИНКИ */
 .tg-qr img {
   display: block;
-  height: 100px;
+  height: 130px;
 }
 
 .tg-qr:hover {
@@ -727,9 +700,9 @@ body {
 
 /* ПОДСКАЗКА */
 .tg-qr::after {
-  content: "Перейти в Telegram";
+  content: "Перейти";
   position: absolute;
-  bottom: -2rem;
+  bottom: -2rem; /* Псевдоэлемент подсказки */
   left: 50%;
   transform: translateX(-50%) translateY(5px);
   color: #757575;
@@ -745,26 +718,22 @@ body {
   transform: translateX(-50%) translateY(0);
 }
 
-/* -----------------------------
-   ЛАПКА
------------------------------ */
-.tg img.paw {
+/* ЛАПКА */
+.tg .paw {
   height: 70px;
+  width: auto;
 }
 
-/* -----------------------------
-   ТЕКСТ НАПИСАТЬ В ТЕЛЕГРАМ
------------------------------ */
-.contacts-telegram {
+/* ТЕКСТ НАПИСАТЬ В ТЕЛЕГРАМ */
+.tg .contacts-telegram {
   font-family: 'Vasek';
   font-size: 2.2rem;
   color: #808080;
   user-select: none;
   transition: color 0.3s ease;
-  padding-top: 2rem;
 }
 
-.contacts-telegram:hover {
+.tg-action .contacts-telegram:hover {
   color: #bda7ff;
 }
 
@@ -773,21 +742,20 @@ body {
 ----------------------------- */
 .contacts-icons {
   display: flex;
-  gap: 0.8rem; /* расстояние между плашками */
-  padding-top: 2.5rem;
-  margin-bottom: 2.5rem;
+  gap: 1rem;
+  margin-bottom: 3rem;
 }
 
-/* ИКОНКА */
+/* ПЛАШКА */
 .contact-icon {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 4px 4px 8px rgba(0,0,0,0.7);
-  transition: all 0.25s ease;
+  transition: transform 0.25s ease;
   position: relative;
   cursor: pointer;
 }
@@ -800,7 +768,7 @@ body {
 .contact-icon::after {
   content: attr(data-tooltip);
   position: absolute;
-  bottom: -1.5rem;
+  bottom: -1.5rem; /* Псевдоэлемент подсказки */
   left: 50%;
   transform: translateX(-50%) translateY(5px);
   background: transparent;
